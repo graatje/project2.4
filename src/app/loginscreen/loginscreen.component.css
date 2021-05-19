@@ -1,0 +1,7 @@
+fieldset {
+    display: inline;
+}
+
+legend {
+    font-weight: bold;
+}

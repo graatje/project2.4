@@ -1,0 +1,36 @@
+import { Injectable } from '@angular/core';
+import { POSTS } from './mock-posts';
+import { Forumpost } from './forumpost';
+import { Observable, of } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class NewForumpostService {
+
+  getPosts(): Observable<Forumpost[]> {
+    const posts = of (POSTS);
+    return posts;
+  }
+
+  addPost(post: Forumpost): void{
+    console.log("Added post to list.");
+    let updated = this.incrementPostID(post);
+    POSTS.push(updated);
+  }
+
+  private incrementPostID(post: Forumpost) : Forumpost{
+    let updated: Forumpost = post;
+    let highest=0;
+
+    for (let i = 0; i < POSTS.length; i++) {
+      if (POSTS[i].id > highest){
+        highest = POSTS[i].id;
+      }
+    }
+    updated.id = highest+1;
+    return updated;
+  }
+
+  constructor() { }
+}

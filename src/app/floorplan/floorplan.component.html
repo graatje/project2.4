@@ -1,0 +1,5 @@
+<h2>Plattegrond</h2>
+
+<img src="/assets/images/plattegrond.webp"/>
+<br>
+<a *ngFor="let room of rooms" href="{{room.name | lowercase}}">({{room.id}}) {{room.name}}</a>

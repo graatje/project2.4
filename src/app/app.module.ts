@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { LoginscreenComponent } from './loginscreen/loginscreen.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FloorplanComponent } from './floorplan/floorplan.component';
-import { LivingroomComponent } from './livingroom/livingroom.component';
 
 @NgModule({
   declarations: [

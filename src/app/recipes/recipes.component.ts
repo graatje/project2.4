@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe';
 import { RecipeService } from '../recipe.service';
@@ -15,14 +16,15 @@ export class RecipesComponent implements OnInit {
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
-      this.getRecipes();
+    this.getRecipes();
   }
 
   onSelect(recipe:Recipe): void {
       this.selectedRecipe = recipe;
   }
 
-  getHeroes(): void {
-    this.recipeService.getRecipes().subscribe(recipes => this.recipes = this.recipes);
+  getRecipes(): void {
+    this.recipes = this.recipeService.getRecipes();
   }
+    
 }

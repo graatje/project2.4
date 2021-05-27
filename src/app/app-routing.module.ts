@@ -7,8 +7,8 @@ import { KitchenComponent } from './kitchen/kitchen.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginscreenComponent },
-  { path: 'navigation', component: FloorplanComponent },
-  { path: 'kitchen', component: KitchenComponent },
+  { path: 'plattegrond', component: FloorplanComponent },
+  { path: 'keuken', component: KitchenComponent },
 ];
 
 @NgModule({

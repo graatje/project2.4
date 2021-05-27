@@ -6,7 +6,7 @@ import { FloorplanComponent } from './floorplan/floorplan.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginscreenComponent },
-  { path: 'navigation', component: FloorplanComponent },
+  { path: 'plattegrond', component: FloorplanComponent },
 ];
 
 @NgModule({

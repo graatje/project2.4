@@ -9,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class RecipeFormComponent {
     title = 'Recept indienen';
 
-    recipeForm = new FormGroup({
+    recipeFormGroup = new FormGroup({
         naam: new FormControl(''),
         bereidingstijd: new FormControl(''),
         personen: new FormControl(''),
@@ -23,7 +23,7 @@ export class RecipeFormComponent {
   }
 
   onSubmit() {
-
+    
   }
 
 }

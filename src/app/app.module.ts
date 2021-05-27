@@ -7,6 +7,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     KitchenComponent,
     RecipesComponent,
     RecipeDetailComponent,
-    RecipeFormComponent
+    RecipeFormComponent,
+
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,19 +1,20 @@
-<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="recipeFormGroup" (ngSubmit)="onSubmit()">
     <h1>{{title}}</h1>
     <div>
         <label>Recept:<input type="text" formControlName="naam"></label>
     </div>    
     <div>
-        <label>Bereidingstijd:<input type="text" formControlName="bereidingstijd"></label>
+        <label>Bereidingstijd (in min.):<input type="text" formControlName="bereidingstijd"></label>
     </div> 
     <div>
-        <label>Personen:<input type="text" formControlName="personen"></label>
+        <label>Aantal personen:<input type="text" formControlName="personen"></label>
     </div>    
     <div>
-        <label>Pittig:<input type="text" formControlName="pittig"></label>
+        <label>Pittigheid (niet, matig, sterk):<input type="text" formControlName="pittig"></label>
     </div>    
     <div>
-        <label>Bereidingswijze:<input type="text" formControlName="bereidingswijze"></label>
+        <label for="bereidingswijze">Bereidingswijze (in stappen):</label>
+        <textarea id="bereidingswijze" input type="text" formControlName="bereidingswijze" rows="6" cols="40"></textarea>
     </div>
 
     <button class="button" type="submit">Toevoegen</button>

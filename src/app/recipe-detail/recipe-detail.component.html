@@ -5,4 +5,5 @@
     <div><span>Bereidingstijd: </span>{{recipe.bereidingstijd}}</div>
     <div><span>Pittigheid: </span>{{recipe.pittig}}</div>
     <div><span>Bereidingswijze: </span>{{recipe.bereidingswijze}} </div>
+    <div><span><ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating></span></div>
 </div>

@@ -7,7 +7,7 @@ import { LivingroomComponent } from './livingroom/livingroom.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginscreenComponent },
-  { path: 'plattegrond', component: FloorplanComponent },
+  { path: 'navigation', component: FloorplanComponent },
   { path: 'woonkamer', component: LivingroomComponent },
 //{ path: 'woonkamer/memory', component: MemoryGameComponent }
 ];

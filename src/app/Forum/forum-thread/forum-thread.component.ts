@@ -33,8 +33,4 @@ export class ForumThreadComponent implements OnInit {
     this.postService.getPosts(id).subscribe(posts => this.posts = posts);
   }
 
-  goBack(): void{
-    this.location.back();
-  }
-
 }

@@ -1,0 +1,21 @@
+.threadContainer{
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+}
+
+li {
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: 7.5px;
+  padding: 5px;
+  height: auto;
+  border-radius: 4px;
+  width: auto;
+  list-style: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}

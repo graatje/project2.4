@@ -2,8 +2,11 @@
   border: 1px solid black;
   padding: 5px;
   margin-top: 5px;
-  width: 70%;
-  margin-left: 25px;
+  width: auto;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  border-radius: 4px;
+
 }
 
 .inputField {
@@ -24,4 +27,7 @@ button{
   padding: 10px;
   margin-left: 25px;
   margin-bottom: 20px;
+  position: inherit;
+  right: 0;
+  bottom: 0;
 }

@@ -1,0 +1,9 @@
+<div class="threadContainer">
+  <h2>Forum threads</h2>
+  <ul>
+    <li *ngFor="let thread of threads">
+      <h4>{{thread.title}}</h4>
+      <p>OP: {{thread.OP}}</p>
+    </li>
+  </ul>
+</div>

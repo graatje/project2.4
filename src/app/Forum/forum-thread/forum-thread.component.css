@@ -6,8 +6,16 @@ li {
   padding: 5px;
   height: auto;
   border-radius: 4px;
+  width: auto;
+  list-style: none;
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
+  padding-left: 0;
+}
+
+.threadContainer{
+  padding-left: 7.5%;
+  padding-right: 7.5%;
 }

@@ -11,6 +11,7 @@ import { NewForumpostService } from '../new-forumpost.service';
 })
 export class ForumThreadComponent implements OnInit {
 
+  id: number= 0;
   posts: Forumpost[] = [];
 
   constructor(private postService: NewForumpostService) { }

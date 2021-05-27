@@ -3,14 +3,16 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NewForumPostComponent } from './new-forum-post/new-forum-post.component';
-import { ForumThreadComponent } from './forum-thread/forum-thread.component';
+import { NewForumPostComponent } from './Forum/new-forum-post/new-forum-post.component';
+import { ForumThreadComponent } from './Forum/forum-thread/forum-thread.component';
+import { ForumBoardComponent } from './Forum/forum-board/forum-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewForumPostComponent,
-    ForumThreadComponent
+    ForumThreadComponent,
+    ForumBoardComponent
   ],
   imports: [
     BrowserModule,

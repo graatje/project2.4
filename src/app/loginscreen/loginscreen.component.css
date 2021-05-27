@@ -1,0 +1,14 @@
+fieldset {
+    display: inline;
+}
+
+legend {
+    font-weight: bold;
+}
+
+.loginbutton {
+    position: relative;
+    margin: 0 auto;
+    width: 20%;
+    left: 35%;
+}

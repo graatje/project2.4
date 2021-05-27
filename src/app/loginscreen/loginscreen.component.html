@@ -1,0 +1,8 @@
+<fieldset>
+    <legend>Log in:</legend>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <label for="username">Username: </label><input id="username" formControlName="username"><br>
+        <label for="password">Password: </label><input type="password" id="username" formControlName="password">
+        <button class="loginbutton" type="submit">login</button>
+    </form>
+</fieldset>

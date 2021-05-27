@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Forumpost } from '../forumpost';
+import { Forumpost, Forumthread } from '../forumpost';
 import { NewForumpostService } from '../new-forumpost.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -11,8 +11,9 @@ import { Location } from '@angular/common';
 })
 export class ForumThreadComponent implements OnInit {
 
-  id: number= 0;
+  id?: number;
   posts: Forumpost[] = [];
+  originalPost: Forumthread = {id:0, title:'', OP:'', post:'', replies:[]};
 
   constructor(
     private postService: NewForumpostService,
@@ -22,15 +23,12 @@ export class ForumThreadComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPosts();
-  }
-
-  public addNewPost(post: Forumpost) : void {
-    this.posts.push(post);
+    this.postService.getThreadOriginalPost(this.id).subscribe(Opost => this.originalPost = Opost);
   }
 
   getPosts(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.postService.getPosts(id).subscribe(posts => this.posts = posts);
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    this.postService.getPosts(this.id).subscribe(posts => this.posts = posts);
   }
 
 }

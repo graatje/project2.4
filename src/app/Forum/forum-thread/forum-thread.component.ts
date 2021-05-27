@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { POSTS } from '../mock-posts';
 import { Forumpost } from '../forumpost';
-import { parseSelectorToR3Selector } from '@angular/compiler/src/core';
 import { NewForumpostService } from '../new-forumpost.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-forum-thread',
@@ -14,7 +14,11 @@ export class ForumThreadComponent implements OnInit {
   id: number= 0;
   posts: Forumpost[] = [];
 
-  constructor(private postService: NewForumpostService) { }
+  constructor(
+    private postService: NewForumpostService,
+    private route: ActivatedRoute,
+    private location: Location
+    ) { }
 
   ngOnInit(): void {
     this.getPosts();
@@ -24,10 +28,13 @@ export class ForumThreadComponent implements OnInit {
     this.posts.push(post);
   }
 
-
-
   getPosts(): void {
-    this.postService.getPosts().subscribe(posts => this.posts = posts);
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.postService.getPosts(id).subscribe(posts => this.posts = posts);
+  }
+
+  goBack(): void{
+    this.location.back();
   }
 
 }

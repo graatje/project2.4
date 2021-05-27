@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { POSTS } from './mock-posts';
+import { THREADS } from './mock-threads';
 import { Forumpost } from './forumpost';
 import { Observable, of } from 'rxjs';
 
@@ -8,9 +9,9 @@ import { Observable, of } from 'rxjs';
 })
 export class NewForumpostService {
 
-  getPosts(): Observable<Forumpost[]> {
-    const posts = of (POSTS);
-    return posts;
+  getPosts(id: number): Observable<Forumpost[]> {
+    const posts = (THREADS.find(thread => thread.id === id)?.replies)!;
+    return of(posts);
   }
 
   addPost(post: Forumpost): void{

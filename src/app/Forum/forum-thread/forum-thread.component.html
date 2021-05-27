@@ -1,5 +1,6 @@
 <div class="threadContainer">
   <h2>Forum Thread</h2>
+  <button (click)="goBack()">Back</button>
   <ul>
     <li *ngFor="let post of posts">
       <span>ID: {{post.id}}</span><br>

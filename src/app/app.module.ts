@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { FloorplanComponent } from './floorplan/floorplan.component';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './interceptor';
+import { LivingroomComponent } from './livingroom/livingroom.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginscreenComponent,
     FloorplanComponent,
+    LivingroomComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<h2>Woonkamer</h2>
+<p>Welkom in de woonkamer! Schuif aan bij een tafel of pak een spelletje uit de spelletjeskast.</p>
+
+<h3>Spelletjeskast</h3>
+<ul>
+    <li *ngFor="let game of games">
+        <a routerLink="./{{game.name | lowercase}}">{{game.name}}</a>
+    </li>
+</ul>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder }  from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../_services/auth.service';
-import { TokenStorageService } from '../_services/tokenservice';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-loginscreen',
@@ -10,38 +10,27 @@ import { TokenStorageService } from '../_services/tokenservice';
 })
 export class LoginscreenComponent implements OnInit {
 
-  usernameField?:string;
-  passwordField?:string;
+  usernameField?: string;
+  passwordField?: string;
   loginForm = this.formBuilder.group({
     username: '',
     password: ''
   });
 
   constructor(private formBuilder: FormBuilder,
-    private authService: AuthService,
-    private tokenStorage: TokenStorageService
+              private authService: AuthService,
+              private router: Router
     ) { }
 
   ngOnInit(): void {
-    if(this.authService.isLoggedIn()){
-      window.location.replace(window.location.origin + "/plattegrond");
-    }
-    
   }
 
-  onLogin():void {
+  onLogin(): void {
     // do stuff to check if username/password combination is correct. get jwt if it is.
-    this.authService.login(this.loginForm.value["username"], this.loginForm.value["password"])
+    this.authService.login(this.loginForm.value.username, this.loginForm.value.password)
     .subscribe(
       data => {
-        
-        console.log("message: " + data.message);
-        this.tokenStorage.saveToken(data.token);
-        this.tokenStorage.saveUser(data);
-        console.log("before:");
-        console.log(data);
-        console.log("after");
-        window.location.reload();
+        this.router.navigate(['navigation']);
       },
       error => {
         alert(error.error.message);

@@ -10,7 +10,6 @@ import { LoginscreenComponent } from './loginscreen/loginscreen.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FloorplanComponent } from './floorplan/floorplan.component';
 import { HttpClientModule } from '@angular/common/http';
-import { authInterceptorProviders } from './interceptor';
 import { LivingroomComponent } from './livingroom/livingroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -32,7 +31,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

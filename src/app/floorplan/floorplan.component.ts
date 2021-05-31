@@ -9,15 +9,12 @@ import { AuthService } from '../_services/auth.service';
 })
 
 export class FloorplanComponent implements OnInit {
-  
+
   rooms = ROOMS;
 
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    if(!this.authService.isLoggedIn()){
-      window.location.replace(window.location.origin + "/login");
-    }
   }
 
 }

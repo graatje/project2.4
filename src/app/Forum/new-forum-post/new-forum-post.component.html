@@ -1,0 +1,9 @@
+
+  <div class="inputField boxed">
+    <label for="author">Author: {{postInfo.author}}</label><br>
+    <span class="inputField">
+      <label for="content">Message: </label>
+      <textarea id="content" [(ngModel)]="postInfo.content"></textarea>
+    </span>
+    <button (click)="onSendClick()">Send</button>
+  </div>

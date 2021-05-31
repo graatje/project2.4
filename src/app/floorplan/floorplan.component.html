@@ -1,0 +1,7 @@
+<h2>Plattegrond</h2>
+
+<img src="/assets/images/plattegrond.webp"/>
+<br>
+<nav>
+    <a *ngFor="let room of rooms" routerLink="/{{room.name | lowercase}}">({{room.id}}) {{room.name}}</a>
+</nav>

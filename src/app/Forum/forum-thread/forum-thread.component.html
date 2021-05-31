@@ -1,0 +1,19 @@
+<div class="threadContainer">
+  <button routerLink="../">Back</button>
+  <ul>
+    <li>
+      <h2>Thread: {{originalPost.title}}</h2>
+      <p>Author: {{originalPost.OP}}</p>
+      <p>Content: {{originalPost.post}}</p>
+    </li>
+  </ul>
+  <ul>
+    <li *ngFor="let post of posts">
+      <span>ID: {{post.id}}</span><br>
+      <span>Author: {{post.author}}</span><br>
+      <span>Message: {{post.content}}</span>
+    </li>
+  </ul>
+</div>
+
+<app-new-forum-post></app-new-forum-post>

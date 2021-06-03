@@ -14,8 +14,8 @@ public class LoadDatabase {
     @Bean
     public CommandLineRunner initDatabase(ForumRepository repository){
         return args -> {
-            log.info("Preloading " + repository.save(new ForumPost("AuthorTest", "ContentTest")));
-            log.info("Preloading " + repository.save(new ForumPost("AnotherAuthor", "SomeMoreContent")));
+            //log.info("Preloading " + repository.save(new ForumThread("AuthorTest", "ContentTest")));
+            //log.info("Preloading " + repository.save(new ForumThread("AnotherAuthor", "SomeMoreContent")));
         };
     }
 

@@ -14,6 +14,6 @@ public class ForumThreadModelAssembler implements RepresentationModelAssembler<F
     public EntityModel<ForumThread> toModel(ForumThread thread) {
         return EntityModel.of(thread,
                 linkTo(methodOn(ForumController.class).getThread(thread.getId())).withSelfRel(),
-                linkTo(methodOn(ForumController.class).getAllThreads()).withRel("noticeboard"));
+                linkTo(methodOn(ForumController.class).getAllThreads()).withRel("prikbord"));
     }
 }

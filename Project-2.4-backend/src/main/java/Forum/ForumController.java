@@ -27,7 +27,7 @@ public class ForumController {
         this.assembler = assembler;
     }
 
-    @GetMapping("/noticeboard")
+    @GetMapping("studiekamer/prikbord")
     CollectionModel<EntityModel<ForumThread>> getAllThreads() {
         List<EntityModel<ForumThread>> threads = repository.findAll().stream()
                 .map(assembler::toModel)
@@ -37,20 +37,20 @@ public class ForumController {
                 linkTo(methodOn(ForumController.class).getAllThreads()).withSelfRel());
     }
 
-    @PostMapping("/noticeboard")
+    @PostMapping("studiekamer/prikbord")
     ForumThread newThread(@RequestBody ForumThread thread) {
         return repository.save(thread);
     }
 
 
-    @GetMapping("/noticeboard/{id}")
+    @GetMapping("studiekamer/prikbord{id}")
     EntityModel<ForumThread> getThread(@PathVariable Long id) {
         ForumThread thread = repository.findById(id).orElseThrow(() -> new ThreadNotFoundException(id));
 
         return assembler.toModel(thread);
     }
 
-    @PutMapping("/noticeboard/{id}")
+    @PutMapping("studiekamer/prikbord{id}")
     ForumThread replaceThread(@RequestBody ForumThread newThread, @PathVariable Long id) {
         return repository.findById(id).map(thread -> {
             thread.setAuthor(newThread.getAuthor());
@@ -63,7 +63,7 @@ public class ForumController {
                 });
     }
 
-    @DeleteMapping("/noticeboard/{id}")
+    @DeleteMapping("studiekamer/prikbord{id}")
     void deleteThread(@PathVariable Long id) {
         repository.deleteById(id);
     }

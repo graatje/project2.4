@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LivingroomComponent } from './livingroom/livingroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterComponent } from './register/register.component';
+import { ChatroomComponent } from './chatroom/chatroom.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RegisterComponent } from './register/register.component';
     LivingroomComponent,
     PageNotFoundComponent,
     RegisterComponent,
+    ChatroomComponent,
   ],
   imports: [
     BrowserModule,

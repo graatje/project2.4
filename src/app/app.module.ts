@@ -12,6 +12,7 @@ import { FloorplanComponent } from './floorplan/floorplan.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LivingroomComponent } from './livingroom/livingroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FloorplanComponent,
     LivingroomComponent,
     PageNotFoundComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

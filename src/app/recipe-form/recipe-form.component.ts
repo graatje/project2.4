@@ -13,8 +13,8 @@ export class RecipeFormComponent {
         naam: new FormControl(''),
         bereidingstijd: new FormControl(''),
         personen: new FormControl(''),
-        pittig: new FormControl(''),
         bereidingwijze: new FormControl(''),
+        ingrediënten: new FormControl(''),
     });
     
   constructor() { }

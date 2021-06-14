@@ -34,7 +34,7 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      registrationStrategy: 'registerImmediately',
+      registrationStrategy: 'registerWhenStable:30000'
     })
   ],
   providers: [],

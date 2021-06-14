@@ -12,6 +12,8 @@ import { FloorplanComponent } from './floorplan/floorplan.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LivingroomComponent } from './livingroom/livingroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

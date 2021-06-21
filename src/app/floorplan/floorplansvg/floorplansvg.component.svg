@@ -1,18 +1,18 @@
-<svg [attr.width]="svgWidth" [attr.height]="svgHeight">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 540">
+  <image xlink:href="/assets/images/plattegrond.png" width="100%" height="100%"></image>
   <g>
-    <g *ngFor="let room of rooms" (click)="navigateRoom(room.name)">
+    <a *ngFor="let room of rooms" (click)="navigate(room.name)">
       <rect
-        [attr.stroke-width]="svgStrokeWidth"
-        [attr.x]="room.x+svgStrokeWidth/2"
-        [attr.y]="room.y+svgStrokeWidth/2"
+        [attr.stroke-width]="3"
+        [attr.x]="room.x"
+        [attr.y]="room.y"
         [attr.width]="room.width"
         [attr.height]="room.height"></rect>
       <text
-        [attr.font-size]="svgFontSize+'px'"
-        [attr.x]="(room.x+svgStrokeWidth/2)+room.width/2"
-        [attr.y]="(room.y+svgStrokeWidth/2)+room.height/2"
+        [attr.x]="room.x+room.width/2"
+        [attr.y]="room.y+room.height/2"
         text-anchor="middle"
         dominant-baseline="middle">{{room.name}}</text>
-    </g>
+    </a>
   </g>
 </svg>

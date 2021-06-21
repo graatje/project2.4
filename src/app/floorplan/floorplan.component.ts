@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROOMS } from '../rooms';
+import { ROOMS } from './rooms';
 import { AuthService } from '../_services/auth.service';
 
 @Component({

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GAMES } from '../games';
-import { Room } from '../room';
-
 
 @Component({
   selector: 'app-livingroom',

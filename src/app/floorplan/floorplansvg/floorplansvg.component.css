@@ -1,8 +1,22 @@
-rect {
-  stroke: black;
-  fill: transparent;
+a {
+  cursor: pointer;
 }
 
-g {
-  cursor: pointer;
+rect {
+  opacity: 0;
+  /*opacity: 30%;
+  fill: white;
+  stroke: black;
+  stroke-width: 3px;*/
+}
+
+svg {
+  width: 100%;
+  max-width: 1000px;
+}
+
+text {
+  font-size: 20px;
+  fill: white; /* Text color */
+  filter: drop-shadow( 3px 3px 3px rgba(0, 0, 0, .7));
 }

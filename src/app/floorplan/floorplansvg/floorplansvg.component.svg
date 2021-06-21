@@ -1,0 +1,18 @@
+<svg [attr.width]="svgWidth" [attr.height]="svgHeight">
+  <g>
+    <g *ngFor="let room of rooms" (click)="navigateRoom(room.name)">
+      <rect
+        [attr.stroke-width]="svgStrokeWidth"
+        [attr.x]="room.x+svgStrokeWidth/2"
+        [attr.y]="room.y+svgStrokeWidth/2"
+        [attr.width]="room.width"
+        [attr.height]="room.height"></rect>
+      <text
+        [attr.font-size]="svgFontSize+'px'"
+        [attr.x]="(room.x+svgStrokeWidth/2)+room.width/2"
+        [attr.y]="(room.y+svgStrokeWidth/2)+room.height/2"
+        text-anchor="middle"
+        dominant-baseline="middle">{{room.name}}</text>
+    </g>
+  </g>
+</svg>

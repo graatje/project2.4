@@ -14,6 +14,7 @@ import { LivingroomComponent } from './livingroom/livingroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { FloorplansvgComponent } from './floorplan/floorplansvg/floorplansvg.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { environment } from '../environments/environment';
     FloorplanComponent,
     LivingroomComponent,
     PageNotFoundComponent,
+    FloorplansvgComponent,
   ],
   imports: [
     BrowserModule,

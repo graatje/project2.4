@@ -8,12 +8,9 @@ import { Room } from '../room';
   templateUrl: './livingroom.component.html',
   styleUrls: ['./livingroom.component.css']
 })
-export class LivingroomComponent implements OnInit, Room {
-  
+export class LivingroomComponent implements OnInit {
+
   constructor() { }
-  
-  id = 2;
-  name = "Woonkamer";
 
   games = GAMES;
 

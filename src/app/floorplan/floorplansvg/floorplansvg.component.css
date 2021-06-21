@@ -1,0 +1,8 @@
+rect {
+  stroke: black;
+  fill: transparent;
+}
+
+g {
+  cursor: pointer;
+}

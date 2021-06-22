@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FloorplanComponent } from './floorplan/floorplan.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thread.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thre
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

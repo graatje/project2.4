@@ -21,6 +21,9 @@ import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thre
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FloorplansvgComponent } from './floorplan/floorplansvg/floorplansvg.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { FloorplansvgComponent } from './floorplan/floorplansvg/floorplansvg.com
     PageNotFoundComponent,
     NewForumThreadComponent,
     FloorplansvgComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

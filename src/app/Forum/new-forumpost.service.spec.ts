@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+// import { TestBed } from '@angular/core/testing';
 
-import { NewForumpostService } from './new-forumpost.service';
+// import { NewForumpostService } from './new-forumpost.service';
 
-describe('NewForumpostService', () => {
-  let service: NewForumpostService;
+// describe('NewForumpostService', () => {
+//   let service: NewForumpostService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(NewForumpostService);
-  });
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({});
+//     service = TestBed.inject(NewForumpostService);
+//   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+//   it('should be created', () => {
+//     expect(service).toBeTruthy();
+//   });
+// });

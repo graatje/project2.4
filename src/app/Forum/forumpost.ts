@@ -7,7 +7,7 @@ export interface Forumpost{
 export interface Forumthread{
   id: number;
   title: string,
-  OP: string;
-  post:  string;
+  author: string;
+  content:  string;
   replies: Forumpost[];
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Forumpost } from '../forumpost';
 import { FormsModule } from '@angular/forms';
 import { ForumThreadComponent } from '../forum-thread/forum-thread.component';
-import { NewForumpostService } from '../new-forumpost.service';
 
 @Component({
   selector: 'app-new-forum-post',
@@ -17,7 +16,7 @@ export class NewForumPostComponent implements OnInit {
     content: ''
   };
 
-  constructor(private postService: NewForumpostService) { }
+  constructor() { }
 
   ngOnInit(): void {
     //TODO: Get Author name from login details
@@ -29,7 +28,7 @@ export class NewForumPostComponent implements OnInit {
       author: this.postInfo.author,
       content: this.postInfo.content
     };
-    this.postService.addPost(info);
+    //this.postService.addPost(info);
     this.resetPostInfo();
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ROOMS } from '../rooms';
+import { ROOMS } from './rooms';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-floorplan',
@@ -8,10 +9,10 @@ import { ROOMS } from '../rooms';
 })
 
 export class FloorplanComponent implements OnInit {
-  
+
   rooms = ROOMS;
 
-  constructor() { }
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
   }

@@ -9,8 +9,13 @@ import { ForumBoardComponent } from './Forum/forum-board/forum-board.component';
 import { LoginscreenComponent } from './loginscreen/loginscreen.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FloorplanComponent } from './floorplan/floorplan.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LivingroomComponent } from './livingroom/livingroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thread.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { FloorplansvgComponent } from './floorplan/floorplansvg/floorplansvg.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +25,21 @@ import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thre
     ForumBoardComponent,
     LoginscreenComponent,
     FloorplanComponent,
+    LivingroomComponent,
     PageNotFoundComponent,
     NewForumThreadComponent,
+    FloorplansvgComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder }  from '@angular/forms';
-
+import { FormBuilder } from '@angular/forms';
+import { AuthService } from '../_services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-loginscreen',
@@ -9,21 +10,31 @@ import { FormBuilder }  from '@angular/forms';
 })
 export class LoginscreenComponent implements OnInit {
 
-  usernameField?:string;
-  passwordField?:string;
+  usernameField?: string;
+  passwordField?: string;
   loginForm = this.formBuilder.group({
     username: '',
     password: ''
   });
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private authService: AuthService,
+              private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
 
-  onLogin():void {
-    console.log("username: " + this.loginForm.value["username"]);
-    console.log("password: " + this.loginForm.value["password"]);
+  onLogin(): void {
     // do stuff to check if username/password combination is correct. get jwt if it is.
+    this.authService.login(this.loginForm.value.username, this.loginForm.value.password)
+    .subscribe(
+      data => {
+        this.router.navigate(['navigation']);
+      },
+      error => {
+        alert(error.error.message);
+      }
+    );
   }
 }

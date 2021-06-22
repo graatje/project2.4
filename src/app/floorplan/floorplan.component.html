@@ -1,7 +1,3 @@
 <h2>Plattegrond</h2>
-
-<img src="/assets/images/plattegrond.webp"/>
-<br>
-<nav>
-    <a *ngFor="let room of rooms" routerLink="/{{room.name | lowercase}}">({{room.id}}) {{room.name}}</a>
-</nav>
+<app-floorplansvg></app-floorplansvg>
+<p>Klik op een kamer om er heen te gaan.</p>

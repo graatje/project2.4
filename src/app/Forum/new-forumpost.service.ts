@@ -9,7 +9,7 @@ import { Observable, of } from 'rxjs';
 })
 export class NewForumpostService {
 
-  currentThread: Forumthread = {id:0, title:'', OP: '', post: '', replies: []};
+  currentThread: Forumthread = {id:0, title:'', author: '', content: '', replies: []};
 
   constructor() { }
 
@@ -37,6 +37,7 @@ export class NewForumpostService {
         highest = POSTS[i].id;
       }
     }
+
 
     updated.id = highest+1;
     return updated;

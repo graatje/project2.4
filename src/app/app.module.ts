@@ -12,6 +12,7 @@ import { FloorplanComponent } from './floorplan/floorplan.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LivingroomComponent } from './livingroom/livingroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thread.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FloorplansvgComponent } from './floorplan/floorplansvg/floorplansvg.component';
@@ -26,6 +27,7 @@ import { FloorplansvgComponent } from './floorplan/floorplansvg/floorplansvg.com
     FloorplanComponent,
     LivingroomComponent,
     PageNotFoundComponent,
+    NewForumThreadComponent,
     FloorplansvgComponent,
   ],
   imports: [

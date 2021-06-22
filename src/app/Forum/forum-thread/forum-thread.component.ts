@@ -13,7 +13,7 @@ export class ForumThreadComponent implements OnInit {
 
   id?: number;
   posts: Forumpost[] = [];
-  originalPost: Forumthread = {id:0, title:'', OP:'', post:'', replies:[]};
+  originalPost: Forumthread = {id:0, title:'', author:'', content:'', replies:[]};
 
   constructor(
     private postService: NewForumpostService,

@@ -5,15 +5,15 @@ import {shareReplay, tap} from 'rxjs/operators';
 import * as moment from 'moment';
 import * as jwt_decode from 'jwt-decode';
 
-const API_URL = 'http://localhost:5000/api/';
-
+// const API_URL = 'http://localhost:5000/api/';
+const API_URL = 'http://localhost:8080/'
 @Injectable()
 export class AuthService {
   constructor(private http: HttpClient) {
   }
 
   login(name: string, password: string) {
-    return this.http.post<User>(API_URL + 'login', {name, password})
+    return this.http.post<User>(API_URL + 'authenticate', {name, password})
       .pipe(
         tap(
           res => this.setSession(res),
@@ -33,7 +33,6 @@ export class AuthService {
 
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()));
-
   }
 
   public logout() {

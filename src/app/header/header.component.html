@@ -1,10 +1,55 @@
-<!DOCTYPE html>
-<html>
-
 <header>
-    <link rel="fav icon" type="image/jpg" href="../../assets/icons/favicon.svg"/>
-    <div class="image"> <img src="../../assets/images/logo.svg" alt="logo"></div>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" routerLink="./plattegrond"><img src="../../assets/images/logo.svg" alt="logo" height="40"></a>
+  
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()"> 
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse show" [ngClass]="{ 'show': navbarOpen }">
+        <ul class="navbar-nav mr-auto">
+                <a dropdownToggle  type="button" class="nav-link dropdown-toggle" >Plattegrond</a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <li>
+                        <a class="dropdown-item" routerLink="./keuken">Keuken</a>    
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="./woonkamer">Woonkamer</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="./studiekamer/prikbord">Studiekamer</a>
+                    </li>
+                </div>
+        </ul>
+    </div>
+
+    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" routerLink="" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+        <img src="../../assets/icons/login.svg" alt="" height="40" loading="lazy" class="rounded-circle">
+    </a>
+            
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+        <li>
+            <a class="dropdown-item" href="#">Mijn account</a>
+        </li>
+        <li>    
+            <a class="dropdown-item" href="#">Uitloggen</a>
+        </li>
+    </ul>
+</nav>
+
+
+    <div class="p-5 text-center bg-image" style="background-image: url('../../assets/images/123.jpg'); height: 400px; width:100%; margin-top: 60px; background-size: cover; background-repeat: no-repeat; background-position: center center; ">
+        <div class="mask" style="background-color: rgba(56, 56, 59, 0.7);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                <div class="image"> <img src="../../assets/images/slogan.svg"  height="100" alt="logo with slogan" style=" width:80%; margin-top: 40px; margin-bottom: 30px; "></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
 </header>
-
-</html>

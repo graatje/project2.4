@@ -16,14 +16,13 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component:HomeComponent},
   { path: 'login', component: LoginscreenComponent },
-  { path: 'plattegrond', component: FloorplanComponent },
-  { path: 'keuken', component: KitchenComponent },
-  { path: 'studiekamer/prikbord', component: ForumBoardComponent},
-  { path: 'studiekamer/prikbord/nieuw', component: NewForumThreadComponent},
-  { path: 'studiekamer/prikbord/thread/:id', component: ForumThreadComponent},
+  { path: 'keuken', component: KitchenComponent, canActivate: [guard] },
+  { path: 'studiekamer/prikbord', component: ForumBoardComponent, canActivate: [guard]},
+  { path: 'studiekamer/prikbord/nieuw', component: NewForumThreadComponent, canActivate: [guard]},
+  { path: 'studiekamer/prikbord/thread/:id', component: ForumThreadComponent, canActivate: [guard] },
   { path: 'plattegrond', component: FloorplanComponent, canActivate: [guard] },
   { path: 'woonkamer', component: LivingroomComponent, canActivate: [guard] },
-// { path: 'woonkamer/memory', component: MemoryGameComponent }
+// { path: 'woonkamer/memory', component: MemoryGameComponent, canActivate: [guard] }
   { path: '**', component: PageNotFoundComponent },
 ];
 

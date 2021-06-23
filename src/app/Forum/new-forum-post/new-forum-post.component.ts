@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Forumpost } from '../forumpost';
 import { FormsModule } from '@angular/forms';
 import { ForumThreadComponent } from '../forum-thread/forum-thread.component';
+import { ForumThreadService } from '../forum-thread.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-forum-post',
@@ -15,8 +17,12 @@ export class NewForumPostComponent implements OnInit {
     author: 'Author',
     content: ''
   };
+  idString: string|null = "";
 
-  constructor() { }
+  constructor(
+    private threadService: ForumThreadService,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
     //TODO: Get Author name from login details
@@ -28,7 +34,17 @@ export class NewForumPostComponent implements OnInit {
       author: this.postInfo.author,
       content: this.postInfo.content
     };
-    //this.postService.addPost(info);
+
+    this.route.paramMap.subscribe(params => this.idString = params.get("id"));
+    let id = Number.parseInt(this.idString? this.idString : "");
+
+    let p = new Promise(() =>{
+      this.threadService.addCommentToThread(id, info);
+    }).then(() => {
+      location.reload();
+    })
+
+
     this.resetPostInfo();
   }
 

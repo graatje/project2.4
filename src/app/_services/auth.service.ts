@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {shareReplay, tap} from 'rxjs/operators';
 
 import * as moment from 'moment';
 import * as jwt_decode from 'jwt-decode';
 
-const API_URL = 'http://localhost:5000/api/';
+// const API_URL = 'http://localhost:5000/api/';
+const API_URL = 'http://localhost:8080/api'
 
 @Injectable()
 export class AuthService {
@@ -13,7 +14,10 @@ export class AuthService {
   }
 
   login(name: string, password: string) {
-    return this.http.post<User>(API_URL + 'login', {name, password})
+    const formData = new FormData();
+    formData.set("name", name);
+    formData.set("password", password);
+    return this.http.post<User>(API_URL + '/login', formData)
       .pipe(
         tap(
           res => this.setSession(res),
@@ -33,19 +37,12 @@ export class AuthService {
 
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()));
-
   }
 
   public logout() {
     localStorage.removeItem("id_token");
     localStorage.removeItem("expires_at");
   }
-
-  /* OPGAVE 4: derde deel
-     Deze methode haalt het expiratie moment weer uit de local storage, parseert het als JSON
-     en retourneert de waarde daarvan. Je kunt (opnieuw) gebruik maken van de library 'moments'
-     om de opgeslagen waarde weer om te zetten in een moment.
- */
 
   public getExpiration() {
     const expiration = localStorage.getItem("expires_at");

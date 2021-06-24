@@ -1,0 +1,8 @@
+<div id="chatbox">
+    <div id="messagebox">
+        
+           <p *ngFor="let message of messages" class="message"><i>{{message.sendername}}</i>: {{message.message}}</p>
+    </div>
+        <input (keydown.enter)="onEnterPress()" type=text id="sendmsg" [(ngModel)]="message" placeholder="send a message...">
+
+</div>

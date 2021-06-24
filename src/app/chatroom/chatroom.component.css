@@ -1,0 +1,27 @@
+#chatbox{
+position: absolute;
+width:20%;
+height: 40%;
+}
+#messagebox{
+    background-color: cadetblue;
+    position: relative;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    height: 80%;
+    margin-top: -10px;
+}
+
+.message{
+    position: relative;
+    top: 5px;
+    line-height:100%;
+    margin-top: -10px;
+}
+
+#sendmsg{
+    background-color: brown;
+    position: relative;
+    width: 97%;
+    height: 20%;   
+}

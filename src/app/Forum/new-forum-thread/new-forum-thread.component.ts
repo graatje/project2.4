@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Forumthread, Forumpost } from '../forumpost';
 import { ForumThreadService } from '../forum-thread.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-forum-thread',
@@ -12,9 +13,10 @@ export class NewForumThreadComponent implements OnInit {
   title: string = "";
   content: string = "";
 
-  threads: Forumthread[] = [];
-
-  constructor(/*private threadService: ForumThreadService*/) { }
+  constructor(
+    private threadService: ForumThreadService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
 
@@ -27,13 +29,15 @@ export class NewForumThreadComponent implements OnInit {
 
     const nw : Forumthread = {
       id: 0,
-      author: "placeholder name",
+      author: "placeholder name", //TODO: Set the name of the logged-in person here!
       content: this.content,
       title: this.title,
       replies: []
     };
 
-    //this.threadService.addThread(nw).subscribe(thread => this.threads.push(thread));
+    this.threadService.addThread(nw).subscribe(thread => {
+      this.router.navigate([`/studiekamer/prikbord/thread/${thread.id}`])
+    });
   }
 
 }

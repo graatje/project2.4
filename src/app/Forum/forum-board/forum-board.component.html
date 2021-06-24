@@ -4,7 +4,7 @@
   <ul>
     <li *ngFor="let thread of threads" routerLink="./thread/{{thread.id}}" >
       <h4>{{thread.title}}</h4>
-      <p>OP: {{thread.author}}</p>
+      <p>Author: {{thread.author}}</p>
     </li>
   </ul>
 </div>

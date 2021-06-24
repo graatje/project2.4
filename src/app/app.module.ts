@@ -17,6 +17,8 @@ import { FloorplanComponent } from './floorplan/floorplan.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LivingroomComponent } from './livingroom/livingroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RegisterComponent } from './register/register.component';
+import { ChatroomComponent } from './chatroom/chatroom.component';
 import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thread.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -40,6 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FloorplanComponent,
     LivingroomComponent,
     PageNotFoundComponent,
+    RegisterComponent,
+    ChatroomComponent,
     NewForumThreadComponent,
     FloorplansvgComponent,
     HomeComponent,

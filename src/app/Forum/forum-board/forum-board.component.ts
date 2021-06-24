@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ForumThreadService } from '../forum-thread.service';
 import { Forumthread } from '../forumpost';
-import { THREADS } from '../mock-threads';
 
 @Component({
   selector: 'app-forum-board',
@@ -9,11 +9,15 @@ import { THREADS } from '../mock-threads';
 })
 export class ForumBoardComponent implements OnInit {
 
-  threads: Forumthread[] = THREADS;
+  threads: Forumthread[] = [];
 
-  constructor() { }
+  constructor(private threadService: ForumThreadService) { }
 
   ngOnInit(): void {
+    this.threadService.getThreads().subscribe(threads => {
+      this.threads = threads
+      console.log(this.threads);
+    });
   }
 
 }

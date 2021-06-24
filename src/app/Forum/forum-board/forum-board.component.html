@@ -1,9 +1,10 @@
 <div class="threadContainer">
   <h2>Forum threads</h2>
+  <button routerLink="./nieuw">Nieuwe Thread</button>
   <ul>
-    <li *ngFor="let thread of threads" routerLink="./{{thread.id}}" >
+    <li *ngFor="let thread of threads" routerLink="./thread/{{thread.id}}" >
       <h4>{{thread.title}}</h4>
-      <p>OP: {{thread.OP}}</p>
+      <p>Author: {{thread.author}}</p>
     </li>
   </ul>
 </div>

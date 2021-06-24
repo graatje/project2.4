@@ -14,6 +14,10 @@ import { LivingroomComponent } from './livingroom/livingroom.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterComponent } from './register/register.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
+import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thread.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { FloorplansvgComponent } from './floorplan/floorplansvg/floorplansvg.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +31,19 @@ import { ChatroomComponent } from './chatroom/chatroom.component';
     PageNotFoundComponent,
     RegisterComponent,
     ChatroomComponent,
+    NewForumThreadComponent,
+    FloorplansvgComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

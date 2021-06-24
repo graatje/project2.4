@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Forumpost, Forumthread } from '../forumpost';
-import { NewForumpostService } from '../new-forumpost.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { ForumThreadService } from '../forum-thread.service';
 
 @Component({
   selector: 'app-forum-thread',
@@ -11,24 +11,32 @@ import { Location } from '@angular/common';
 })
 export class ForumThreadComponent implements OnInit {
 
+  idString : string|null = "";
   id?: number;
   posts: Forumpost[] = [];
-  originalPost: Forumthread = {id:0, title:'', OP:'', post:'', replies:[]};
+  originalPost: Forumthread = {id:0, title:'', author:'', content:'', replies:[]};
 
   constructor(
-    private postService: NewForumpostService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private threadService: ForumThreadService,
     ) { }
 
   ngOnInit(): void {
-    this.getPosts();
-    this.postService.getThreadOriginalPost(this.id).subscribe(Opost => this.originalPost = Opost);
+
+    this.route.paramMap.subscribe(params => this.idString = params.get("id"));
+    this.id = Number.parseInt(this.idString? this.idString : "");
+
+    this.threadService.getThreadByID(this.id).subscribe(thread => {
+      // console.log(thread);
+      this.originalPost = thread;
+      this.getPosts();
+    });
+
   }
 
   getPosts(): void {
-    this.id = Number(this.route.snapshot.paramMap.get('id'));
-    this.postService.getPosts(this.id).subscribe(posts => this.posts = posts);
+    this.posts = this.originalPost.replies;
   }
 
 }

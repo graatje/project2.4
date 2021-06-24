@@ -2,8 +2,7 @@
     <legend>Log in:</legend>
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
         <label for="username">Username: </label><input id="username" formControlName="username"><br>
-        <label for="password">Password: </label><input type="password" id="username" formControlName="password">
+        <label for="password">Password: </label><input type="password" id="password" formControlName="password">
         <button class="loginbutton" type="submit">login</button>
     </form>
 </fieldset>
-<chatroom></chatroom>

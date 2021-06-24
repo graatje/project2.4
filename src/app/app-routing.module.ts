@@ -6,6 +6,7 @@ import { LivingroomComponent } from './livingroom/livingroom.component';
 import { ForumBoardComponent } from './Forum/forum-board/forum-board.component';
 import { ForumThreadComponent } from './Forum/forum-thread/forum-thread.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thread.component';
 import { AuthGuardService as guard } from './_services/auth-guard.service';
 import { AuthService } from './_services/auth.service';
 import { RegisterComponent } from './register/register.component'
@@ -13,12 +14,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginscreenComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'studiekamer/prikbord', component: ForumBoardComponent},
+  { path: 'studiekamer/prikbord/nieuw', component: NewForumThreadComponent},
+  { path: 'studiekamer/prikbord/thread/:id', component: ForumThreadComponent},
   { path: 'plattegrond', component: FloorplanComponent, canActivate: [guard] },
-  { path: 'navigation', component: FloorplanComponent, canActivate: [guard] },
   { path: 'woonkamer', component: LivingroomComponent, canActivate: [guard] },
 // { path: 'woonkamer/memory', component: MemoryGameComponent }
-  { path: 'studyroom/noticeboard', component: ForumBoardComponent, canActivate: [guard] },
-  { path: 'studyroom/noticeboard/:id', component: ForumThreadComponent, canActivate: [guard] },
   { path: '**', component: PageNotFoundComponent },
 ];
 

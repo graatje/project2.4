@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { KitchenComponent } from './kitchen/kitchen.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
-import { RecipeFormComponent } from './recipe-form/recipe-form.component';
+import { KitchenComponent } from './Keuken/kitchen/kitchen.component';
+import { RecipesComponent } from './Keuken/recipes/recipes.component';
+import { RecipeDetailComponent } from './Keuken/recipe-detail/recipe-detail.component';
+import { RecipeFormComponent } from './Keuken/recipe-form/recipe-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NewForumPostComponent } from './Forum/new-forum-post/new-forum-post.component';
 import { ForumThreadComponent } from './Forum/forum-thread/forum-thread.component';

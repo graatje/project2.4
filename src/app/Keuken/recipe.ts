@@ -1,8 +1,10 @@
 export interface Recipe {
+    id: number;
     naam: string;
     bereidingstijd: number;
-    personen: number;
+    aantalPersonen: number;
     ingredienten: string;
     bereidingswijze: string;
-    starrating: number;
+    thumbsUp: number;
+    thumbsDown: number;
 }

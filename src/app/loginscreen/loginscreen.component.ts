@@ -30,7 +30,7 @@ export class LoginscreenComponent implements OnInit {
     this.authService.login(this.loginForm.value.username, this.loginForm.value.password)
     .subscribe(
       data => {
-        this.router.navigate(['navigation']);
+        this.router.navigate(['plattegrond']);
       },
       error => {
         alert(error.error.message);

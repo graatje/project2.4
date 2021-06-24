@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { KitchenComponent } from './kitchen/kitchen.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { RecipeFormComponent } from './recipe-form/recipe-form.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NewForumPostComponent } from './Forum/new-forum-post/new-forum-post.component';
 import { ForumThreadComponent } from './Forum/forum-thread/forum-thread.component';
 import { ForumBoardComponent } from './Forum/forum-board/forum-board.component';
@@ -18,10 +23,17 @@ import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thre
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FloorplansvgComponent } from './floorplan/floorplansvg/floorplansvg.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    KitchenComponent,
+    RecipesComponent,
+    RecipeDetailComponent,
+    RecipeFormComponent,
     NewForumPostComponent,
     ForumThreadComponent,
     ForumBoardComponent,
@@ -33,11 +45,15 @@ import { FloorplansvgComponent } from './floorplan/floorplansvg/floorplansvg.com
     ChatroomComponent,
     NewForumThreadComponent,
     FloorplansvgComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     ReactiveFormsModule,
+    NgbModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

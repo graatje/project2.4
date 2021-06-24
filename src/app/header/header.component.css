@@ -1,0 +1,21 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../../assets/fonts/typographica_demo-webfont.woff);
+  }
+
+nav{
+    background-color: #ffcc00;
+}
+
+.nav-link{
+    color: #565659;
+    font-size: 24px;
+    font-family: myFirstFont;
+    text-align: center;
+}
+
+.nav-link:hover{
+    background-color: #ff9811;
+    color: #565659;
+    border-radius: 8px;
+}

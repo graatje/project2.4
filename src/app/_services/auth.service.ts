@@ -5,7 +5,7 @@ import {shareReplay, tap} from 'rxjs/operators';
 import * as moment from 'moment';
 import * as jwt_decode from 'jwt-decode';
 
-const API_URL = 'http://localhost:5000/api/';
+const API_URL = 'http://localhost:8080/api/';
 
 @Injectable()
 export class AuthService {
@@ -13,7 +13,10 @@ export class AuthService {
   }
 
   login(name: string, password: string) {
-    return this.http.post<User>(API_URL + 'login', {name, password})
+    const formData = new FormData();
+    formData.set("name", name);
+    formData.set("password", password);
+    return this.http.post<User>(API_URL + '/login', formData)
       .pipe(
         tap(
           res => this.setSession(res),

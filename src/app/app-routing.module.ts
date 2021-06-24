@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'home', component:HomeComponent},
   { path: 'login', component: LoginscreenComponent },
   { path: 'keuken', component: KitchenComponent, canActivate: [guard] },
+  { path: 'studiekamer', redirectTo: "studiekamer/prikbord", pathMatch:'full'},
   { path: 'studiekamer/prikbord', component: ForumBoardComponent, canActivate: [guard]},
   { path: 'studiekamer/prikbord/nieuw', component: NewForumThreadComponent, canActivate: [guard]},
   { path: 'studiekamer/prikbord/thread/:id', component: ForumThreadComponent, canActivate: [guard] },

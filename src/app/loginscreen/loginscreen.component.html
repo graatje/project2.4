@@ -1,6 +1,6 @@
 <form class="text-center border border-light p-5" [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
-    <p class="h4 mb-4">Inloggen</p>
+    <p>Inloggen</p>
     
     <input type="email" id="username" formControlName="username" class="form-control mb-4" placeholder="E-mail">
     <input type="password" id="password" formControlName="password" class="form-control mb-4" placeholder="Wachtwoord">
@@ -11,6 +11,5 @@
       </div>
     </div>
 
-    <button mdbBtn color="info" block="true" class="my-4" type="submit">Inloggen</button>
-
+    <button  type="submit">Inloggen</button>
   </form>

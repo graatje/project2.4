@@ -5,13 +5,27 @@
 
 nav{
     background-color: #ffcc00;
+    height: 65px;
+}
+
+img{
+    height: 50px;
 }
 
 .nav-link{
     color: #565659;
-    font-size: 24px;
     font-family: myFirstFont;
-    text-align: center;
+}
+
+.dropdown-item{
+    color: #565659;
+    font-family: myFirstFont;
+}
+
+.dropdown-item:hover{
+    background-color: #ff9811;
+    color: #565659;
+
 }
 
 .nav-link:hover{
@@ -19,3 +33,20 @@ nav{
     color: #565659;
     border-radius: 8px;
 }
+
+#bgimage{
+    max-width: 100%;
+    height: auto;
+}
+
+#slogan{
+    width:80%; 
+    margin-top: 40px; 
+    margin-bottom: 30px;
+}
+
+#maskstyle{
+    background-color: rgba(56, 56, 59, 0.7)
+}
+
+

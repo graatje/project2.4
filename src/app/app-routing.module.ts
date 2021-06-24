@@ -9,10 +9,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thread.component';
 import { AuthGuardService as guard } from './_services/auth-guard.service';
 import { AuthService } from './_services/auth.service';
-
+import { RegisterComponent } from './register/register.component'
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginscreenComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'studiekamer/prikbord', component: ForumBoardComponent},
   { path: 'studiekamer/prikbord/nieuw', component: NewForumThreadComponent},
   { path: 'studiekamer/prikbord/thread/:id', component: ForumThreadComponent},

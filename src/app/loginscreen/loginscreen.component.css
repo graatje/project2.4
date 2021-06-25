@@ -30,3 +30,8 @@ button:hover{
       float: inherit;
     }
   }
+
+  input:focus { 
+
+    box-shadow: 0 0 10px #ffcc00;
+}

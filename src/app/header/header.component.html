@@ -1,9 +1,6 @@
-
-
-
 <header>
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" routerLink="./plattegrond">
+    <a class="navbar-brand" routerLink="./home">
         <img src="../../assets/images/logo.svg">
     </a>
 
@@ -22,20 +19,22 @@
     </div>
   </nav>
 
-    <div class="bg-image"><img src="../../assets/images/1234.jpg" id="bgimage">
-        <div class="mask" id="maskstyle">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <img src="../../assets/images/slogan.svg" id=slogan alt="logo with slogan">
-            </div>
-        </div>
-    </div>
-
-    <!-- <div class="p-5 text-center bg-image" style="background-image: url('../../assets/images/1234.jpg');">
-            <div class="mask" style="background-color: rgba(56, 56, 59, 0.7);">
-                <div class="d-flex justify-content-center align-items-center h-100">
-                    <div class="image"> <img src="../../assets/images/slogan.svg"  height="100" alt="logo with slogan"></div>
-                </div>
-            </div>
-        </div> -->
-
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="../../assets/images/man1.jpg" alt="Random first slide" class="w-100 h-100">
+      </div>
+      <div class="carousel-caption">
+        <img src="../../assets/images/slogan.svg" id=slogan alt="logo with slogan" class="w-100 h-100">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="../../assets/images/man2.jpg" alt="Random second slide" class="w-100 h-100">
+      </div>
+      <div class="carousel-caption">
+        <img src="../../assets/images/slogan.svg" id=slogan alt="logo with slogan" class="w-100 h-100">
+      </div>
+    </ng-template>
+  </ngb-carousel>
 </header>

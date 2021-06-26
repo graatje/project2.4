@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {shareReplay, tap} from 'rxjs/operators';
 
 import * as moment from 'moment';
-import * as jwt_decode from 'jwt-decode';
+import jwtDecode from 'jwt-decode';
 
 // const API_URL = 'http://localhost:5000/api/';
 const API_URL = 'http://localhost:8080/api'
@@ -35,7 +35,7 @@ export class AuthService {
     console.log("Setting session");
     const expiresAt = moment().add(authResult.expiresIn, 'second');
 
-    localStorage.setItem('id_token', authResult.idToken);
+    localStorage.setItem('id_token', authResult.token);
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()));
   }
 
@@ -56,6 +56,21 @@ export class AuthService {
       console.log(expiration);
     }
     return moment(expiresAt);
+  }
+
+  public getLoggedInUserName() : string|undefined {
+    let username: string|undefined;
+
+    try{
+      let token = localStorage.getItem('id_token');
+      if (token){
+        let decoded = jwtDecode<any>(token)
+        username = decoded.name;
+      }
+    } catch(Error){
+      console.log(Error);
+    }
+    return username;
   }
 
   private handleError(error: any) {

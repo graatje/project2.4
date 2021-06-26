@@ -5,6 +5,6 @@ export interface Recipe {
     aantalPersonen: number;
     ingredienten: string;
     bereidingswijze: string;
-    thumbsUp: number;
-    thumbsDown: number;
+    thumbsUp: string[];
+    thumbsDown: string[];
 }

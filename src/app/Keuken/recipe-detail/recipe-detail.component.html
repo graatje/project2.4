@@ -1,3 +1,4 @@
+<button routerLink="../">Back</button>
 <div *ngIf="recipe">
     <h2>{{recipe.naam | uppercase}}</h2>
     <!-- <div><span>Bereidingstijd: </span>{{recipe.bereidingstijd}}</div> -->
@@ -5,5 +6,18 @@
     <div><span>Bereidingstijd: </span>{{recipe.bereidingstijd}}</div>
     <div><span>Ingrediënten: </span>{{recipe.ingredienten}}</div>
     <div><span>Bereidingswijze: </span>{{recipe.bereidingswijze}} </div>
-    <!-- <div><span><ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating></span></div> -->
+    <div (click)="onThumbsUpClick()">
+    <span *ngIf="thumbsUpStatus">
+      <img class="thumbsIcons" src="../../../assets/icons/like_clicked.png">
+    </span> <span *ngIf="!thumbsUpStatus">
+      <img class="thumbsIcons" src="../../../assets/icons/like_unclicked.png">
+    </span>
+    {{recipe.thumbsUp.length}}</div>
+    <div (click)="onThumbsDownClick()">
+      <span *ngIf="thumbsDownStatus">
+        <img class="thumbsIcons" src="../../../assets/icons/dislike_clicked.png">
+      </span><span *ngIf="!thumbsDownStatus">
+        <img class="thumbsIcons" src="../../../assets/icons/dislike_unclicked.png">
+      </span>
+      {{recipe.thumbsDown.length}}</div>
 </div>

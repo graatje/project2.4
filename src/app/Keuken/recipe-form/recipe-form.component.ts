@@ -37,8 +37,8 @@ export class RecipeFormComponent {
       aantalPersonen: this.recipeFormGroup.get('personen')?.value,
       bereidingswijze: this.recipeFormGroup.get('bereidingswijze')?.value,
       ingredienten: this.recipeFormGroup.get('ingredienten')?.value,
-      thumbsDown: 0,
-      thumbsUp: 0
+      thumbsDown: [],
+      thumbsUp: []
     }
 
     this.recipeService.addRecipe(newRecipe).subscribe(recipe =>{

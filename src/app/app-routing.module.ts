@@ -11,21 +11,22 @@ import { NewForumThreadComponent } from './Forum/new-forum-thread/new-forum-thre
 import { AuthGuardService as guard } from './_services/auth-guard.service';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component'
+import { RegisterComponent } from './register/register.component';
+import {MemoryGameComponent} from "./livingroom/memory-game/memory-game.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component:HomeComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginscreenComponent },
   { path: 'keuken', component: KitchenComponent, canActivate: [guard] },
-  { path: 'studiekamer', redirectTo: "studiekamer/prikbord", pathMatch:'full'},
+  { path: 'studiekamer', redirectTo: 'studiekamer/prikbord', pathMatch: 'full'},
   { path: 'studiekamer/prikbord', component: ForumBoardComponent, canActivate: [guard]},
   { path: 'studiekamer/prikbord/nieuw', component: NewForumThreadComponent, canActivate: [guard]},
   { path: 'studiekamer/prikbord/thread/:id', component: ForumThreadComponent, canActivate: [guard] },
   { path: 'register', component: RegisterComponent },
   { path: 'plattegrond', component: FloorplanComponent, canActivate: [guard] },
   { path: 'woonkamer', component: LivingroomComponent, canActivate: [guard] },
-// { path: 'woonkamer/memory', component: MemoryGameComponent, canActivate: [guard] }
+  { path: 'woonkamer/memory', component: MemoryGameComponent, canActivate: [guard] },
   { path: '**', component: PageNotFoundComponent },
 ];
 

@@ -26,6 +26,7 @@ import { FloorplansvgComponent } from './floorplan/floorplansvg/floorplansvg.com
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { MemoryGameComponent } from './livingroom/memory-game/memory-game.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    MemoryGameComponent,
   ],
   imports: [
     BrowserModule,

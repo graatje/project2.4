@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {BoardComponent} from './board.component';
+import {MemoryHeaderComponent} from './memory-header.component';
 
-describe('BoardComponent', () => {
-  let component: BoardComponent;
-  let fixture: ComponentFixture<BoardComponent>;
+describe('HeaderComponent', () => {
+  let component: MemoryHeaderComponent;
+  let fixture: ComponentFixture<MemoryHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BoardComponent]
+      declarations: [MemoryHeaderComponent]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BoardComponent);
+    fixture = TestBed.createComponent(MemoryHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

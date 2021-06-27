@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-memory-game',
+  selector: 'app-root',
   templateUrl: './memory-game.component.html',
   styleUrls: ['./memory-game.component.css']
 })

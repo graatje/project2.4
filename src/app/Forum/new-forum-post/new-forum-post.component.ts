@@ -38,11 +38,7 @@ export class NewForumPostComponent implements OnInit {
     this.route.paramMap.subscribe(params => this.idString = params.get("id"));
     let id = Number.parseInt(this.idString? this.idString : "");
 
-    let p = new Promise(() =>{
-      this.threadService.addCommentToThread(id, info);
-    }).then(() => {
-      location.reload();
-    })
+    this.threadService.addCommentToThread(id, info);
 
 
     this.resetPostInfo();

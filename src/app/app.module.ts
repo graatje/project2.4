@@ -27,6 +27,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MemoryGameComponent } from './livingroom/memory-game/memory-game.component';
+import {BoardModule} from "./livingroom/memory-game/board/board.module";
 
 @NgModule({
   declarations: [
@@ -51,18 +52,19 @@ import { MemoryGameComponent } from './livingroom/memory-game/memory-game.compon
     FooterComponent,
     MemoryGameComponent,
   ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    NgbModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      registrationStrategy: 'registerWhenStable:30000'
-    })
-  ],
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        NgbModule,
+        FormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            registrationStrategy: 'registerWhenStable:30000'
+        }),
+        BoardModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

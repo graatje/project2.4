@@ -15,23 +15,24 @@ import { RegisterComponent } from './register/register.component'
 import { RecipeFormComponent } from './Keuken/recipe-form/recipe-form.component';
 import { RecipeDetailComponent } from './Keuken/recipe-detail/recipe-detail.component';
 import { RecipesComponent } from './Keuken/recipes/recipes.component';
+import {MemoryGameComponent} from "./livingroom/memory-game/memory-game.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component:HomeComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginscreenComponent },
   { path: 'keuken', component: KitchenComponent, canActivate: [guard] },
   { path: 'keuken/recepten', component: RecipesComponent, canActivate: [guard]},
   { path: 'keuken/recepten/nieuw', component: RecipeFormComponent, canActivate: [guard]},
   { path: 'keuken/recepten/:id', component: RecipeDetailComponent, canActivate: [guard]},
-  { path: 'studiekamer', redirectTo: "studiekamer/prikbord", pathMatch:'full'},
+  { path: 'studiekamer', redirectTo: 'studiekamer/prikbord', pathMatch: 'full'},
   { path: 'studiekamer/prikbord', component: ForumBoardComponent, canActivate: [guard]},
   { path: 'studiekamer/prikbord/nieuw', component: NewForumThreadComponent, canActivate: [guard]},
   { path: 'studiekamer/prikbord/thread/:id', component: ForumThreadComponent, canActivate: [guard] },
   { path: 'register', component: RegisterComponent },
-  { path: 'plattegrond', component: FloorplanComponent},
-  { path: 'woonkamer', component: LivingroomComponent},
-// { path: 'woonkamer/memory', component: MemoryGameComponent, canActivate: [guard] }
+  { path: 'plattegrond', component: FloorplanComponent, canActivate: [guard] },
+  { path: 'woonkamer', component: LivingroomComponent, canActivate: [guard] },
+  { path: 'woonkamer/memory', component: MemoryGameComponent, canActivate: [guard] },
   { path: '**', component: PageNotFoundComponent },
 ];
 

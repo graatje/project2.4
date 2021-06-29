@@ -1,5 +1,10 @@
 :host {
   display: block;
   width: fit-content;
-  margin: 0 auto;
+  margin: 8px auto;
+
+  background-color: #ffcc00;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
 }

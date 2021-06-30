@@ -6,8 +6,10 @@ div {
   font-size: large;
   cursor: pointer;
   border-radius: 3px;
+  color: #565659;
 }
 
 div.found {
   cursor: default;
+  color: white;
 }

@@ -31,8 +31,8 @@ const routes: Routes = [
   { path: 'studiekamer/prikbord/thread/:id', component: ForumThreadComponent, canActivate: [guard] },
   { path: 'register', component: RegisterComponent },
   { path: 'plattegrond', component: FloorplanComponent, canActivate: [guard] },
-  { path: 'woonkamer', component: LivingroomComponent, canActivate: [guard] },
-  { path: 'woonkamer/memory', component: MemoryGameComponent, canActivate: [guard] },
+  { path: 'woonkamer', component: LivingroomComponent  },
+  { path: 'woonkamer/memory', component: MemoryGameComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

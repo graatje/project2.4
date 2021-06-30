@@ -1,12 +1,12 @@
-<div class="container">
-  <h2>Forumdraadjes</h2>
-  <button class="btn btn-dark" routerLink="./nieuw">Nieuw draadje</button>
+<div class="my-2 container">
+  <h2 class="studorm-text">Forumposts</h2>
+  <button class="btn studorm-button studorm-clr-primary-reverse" routerLink="./nieuw">Nieuwe post</button>
 
-  <div *ngFor="let thread of threads" class="my-3 card " >
-    <h3 class="card-header">{{thread.title}}</h3>
+  <div *ngFor="let thread of threads" class="my-3 card">
+    <h3 class="card-header studorm-text">{{thread.title}}</h3>
     <div class="card-body">
       <p>{{thread.content}}</p>
-      <a class="btn btn-dark stretched-link" routerLink="./thread/{{thread.id}}">Lees meer</a>
+      <button class="btn studorm-button studorm-clr-primary stretched-link" routerLink="./thread/{{thread.id}}">Lees meer</button>
     </div>
     <div class="card-footer text-muted">
       Door: {{thread.author}}

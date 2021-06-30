@@ -82,6 +82,7 @@
   border-radius: 8px;
   margin: 30px auto auto;
   width: 30%;
+  min-width: 300px;
 }
 
 .studorm-card-clr-primary {

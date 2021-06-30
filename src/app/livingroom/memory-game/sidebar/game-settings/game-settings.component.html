@@ -1,0 +1,30 @@
+<b>Karakter op kaarten: </b>
+<select name="character" #charSelect (change)='setChar(charSelect.value)'>
+  <option *ngFor="let char of chars" [ngValue]="char" [selected]="char === defaultChar">{{char}}</option>
+</select>
+
+<br>
+
+<ng-container *ngIf="ctrlColors">
+  <b>Kaartkleuren</b>
+  <br>
+  <div *ngFor="let ctrl of ctrlColors; index as i">
+    <p>{{ctrl.control}}:</p>
+    <input type="color" [(ngModel)]="ctrl.color" (change)="colorService.changeColor(ctrl.control, ctrl.color)"
+           name="color_{{i}}"/>
+    <p>({{ctrl.color}})</p>
+  </div>
+</ng-container>
+
+<br><br>
+
+<form #f="ngForm" (ngSubmit)="startNewGame(f)" novalidate>
+  <b>Afmeting bord:</b>
+  <select ngModel [(ngModel)]="defaultSize" name="size">
+    <option *ngFor="let size of sizes" [ngValue]="size" [selected]="size === defaultSize">{{size}}</option>
+  </select>
+
+  <br>
+
+  <button class="btn btn-primary" type="submit">Nieuw Spel</button>
+</form>

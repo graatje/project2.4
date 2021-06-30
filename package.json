@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "webserver": "rimraf dist && ng build --configuration production && http-server -c-1 --proxy http://localhost:8080? dist/project24"
+    "webserver": "rimraf dist && ng build --configuration production && http-server -c-1 -p 8081 --proxy http://localhost:8081? dist/project24"
   },
   "private": true,
   "dependencies": {

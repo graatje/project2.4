@@ -1,9 +1,17 @@
+<div class="card">
+  <h3 class="card-header studorm-text">Nieuwe reactie</h3>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="content">Jouw reactie:</label>
+      <textarea class="form-control" id="content" rows="3" [(ngModel)]="postInfo.content"></textarea>
+    </div>
 
-  <div class="inputField boxed">
-    <label for="author">Author: {{postInfo.author}}</label><br>
-    <span class="inputField">
-      <label for="content">Message: </label>
-      <textarea id="content" [(ngModel)]="postInfo.content"></textarea>
-    </span>
-    <button (click)="onSendClick()">Send</button>
+    <div class="form-group">
+    </div>
   </div>
+  <div class="card-footer">
+    <div class="float-right">
+      <button class="btn studorm-button studorm-clr-primary" (click)="onSendClick()">Verstuur</button>
+    </div>
+  </div>
+</div>

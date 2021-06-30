@@ -11,6 +11,7 @@ export class MemoryHeaderComponent implements OnInit {
   elapsedTime = 0;
   peekTimeRemaining = 10;
   foundCardPairs = 0;
+  title = 'Memory';
 
   constructor(public timingService: TimingService, private boardService: BoardService) {
     timingService.peekTimeRemaining.subscribe(peekTimeRemaining => this.peekTimeRemaining = peekTimeRemaining);

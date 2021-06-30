@@ -1,8 +1,10 @@
 div {
   display: flex;
   flex-direction: column;
-  width: 25vw;
-  height: 70vh;
-  text-align: left;
   gap: 100px;
+
+  background-color: #ff9811;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
 }

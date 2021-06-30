@@ -1,0 +1,39 @@
+#recipeform{
+    background-color: #565659;
+    padding: 20px 20px 20px 20px;
+    margin: auto;
+    width: 30%;
+    border-radius: 8px;
+    margin-top: 30px; 
+}
+
+button{
+    border-radius: 8px;
+    font-family: myFirstFont;
+    font-size: 20px;
+    color: white;
+    background-color: #ff9811;
+    border-color:#ff9811 ;
+    margin-right: 10px;
+}
+
+button:hover{
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+    color: #565659;
+}
+
+input:focus { 
+    box-shadow: 0 0 10px #ffcc00;
+}
+
+textarea:focus{
+    box-shadow: 0 0 10px #ffcc00;
+}
+
+h1 {
+    text-align: center;
+    color: #ffcc00;
+    font-family: myFirstFont;
+    font-size: 30px;
+}

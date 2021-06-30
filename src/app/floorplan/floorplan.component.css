@@ -1,20 +1,46 @@
-a {
-    background-color: hsl(122, 39%, 50%);
-    border: none;
-    color: white;
-    padding: 5px 16px;
+#infotext {
+    background-color: #ff9811;
+    padding: 8px;
+    margin: auto;
+    width: 30%;
+    border-radius: 8px;
+    margin-top: 30px;
+  }
+
+#plattegrond{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 30px;
+}
+  
+h1 {
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 5px;
+    color: #565659;
+    font-family: myFirstFont;
+    font-size: 30px;
+}
+  
+p {
+    text-align: justify;
+    letter-spacing: 1px;
+    font-family: myFirstFont;
+    color: #565659;
+}
+  
+@media screen and (max-width: 992px) {
+    #infotext {
+        margin: auto;
+        width: 80%;
+        margin-top: 30px;
+    }
 }
 
-a:hover {
-    background-color: hsl(122, 39%, 40%);
-}
-
-img {
-    width:100%;
-    max-width: 500px;
+@media screen and (max-width: 992px) {
+    #plattegrond {
+        margin: auto;
+        width: 100%;
+        margin-top: 30px;
+    }
 }

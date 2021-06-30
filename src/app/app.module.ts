@@ -26,6 +26,7 @@ import { FloorplansvgComponent } from './floorplan/floorplansvg/floorplansvg.com
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MemoryGameComponent} from './livingroom/memory-game/memory-game.component';
 import {BoardModule} from './livingroom/memory-game/board/board.module';
 import {MemoryHeaderModule} from './livingroom/memory-game/header/memory-header.module';
@@ -65,6 +66,7 @@ import {SidebarModule} from "./livingroom/memory-game/sidebar/sidebar.module";
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000'
     }),
+    BrowserAnimationsModule,
     BoardModule,
     MemoryHeaderModule,
     SidebarModule,

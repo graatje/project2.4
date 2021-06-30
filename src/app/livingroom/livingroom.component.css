@@ -1,0 +1,53 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../../assets/fonts/typographica_demo-webfont.woff);
+  }
+
+#chatroom{
+    background-color: #ff9811;
+    padding: 8px;
+    margin: auto;
+    width: 30%;
+    border-radius: 8px;
+    margin-top: 30px;
+
+}
+
+#infotext {
+    background-color: #ff9811;
+    padding: 8px;
+    margin: auto;
+    width: 30%;
+    border-radius: 8px;
+    margin-top: 30px;
+  }
+
+  #gamecabinet{
+    background-color: #ffcc00;
+    padding: 8px;
+    margin: auto;
+    width: 30%;
+    border-radius: 8px;
+    margin-top: 30px;
+  }
+
+h1 {
+    text-align: center;
+    color: #565659;
+    font-family: myFirstFont;
+    font-size: 30px;
+}
+  
+p {
+    text-align: justify;
+    letter-spacing: 1px;
+    font-family: myFirstFont;
+    color: #565659;
+}
+
+a {
+    font-family: myFirstFont;
+    letter-spacing: 1px;
+    color:#565659;
+}
+

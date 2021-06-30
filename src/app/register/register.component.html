@@ -1,10 +1,12 @@
-<fieldset>
-    <legend>Register in:</legend>
-    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
-        <label for="username">Username: </label><input id="username" formControlName="username"><br>
-        <label for="email">Email: </label><input id="email" formControlName="email"><br>
-        <label for="password">Password: </label><input type="password" id="username" formControlName="password"><br>
-        <label for="confirmPassword">Confirm password: </label><input type="password" id="username" formControlName="confirmPassword">
-        <button class="registerbutton" type="submit">register</button>
-    </form>
-</fieldset>
+<form class="text-center" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <div id="registerform">
+        <p>Account registreren</p>
+        
+        <input type="username" id="username" formControlName="username" class="form-control mb-4" placeholder="Gebruikersnaam">
+        <input type="password" id="password" formControlName="password" class="form-control mb-4" placeholder="Wachtwoord">
+        <input type="confirmPassword" id="confirmPassword" formControlName="confirmPassword" class="form-control mb-4" placeholder="Bevestig wachtwoord">
+        
+
+        <button  class="btn btn-primary" type="submit">Registreren</button>
+    </div>
+</form>

@@ -13,6 +13,7 @@ import { RecipeService } from '../recipe.service';
 export class RecipesComponent implements OnInit {
     title = 'Receptenboek';
     recipes:Recipe[] = [];
+    title_kitchen="Keuken";
 
   constructor(private recipeService: RecipeService,
     private router: Router) { }

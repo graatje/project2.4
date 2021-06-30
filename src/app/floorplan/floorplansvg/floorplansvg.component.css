@@ -4,10 +4,6 @@ a {
 
 rect {
   opacity: 0;
-  /*opacity: 30%;
-  fill: white;
-  stroke: black;
-  stroke-width: 3px;*/
 }
 
 svg {
@@ -16,7 +12,18 @@ svg {
 }
 
 text {
-  font-size: 20px;
-  fill: white; /* Text color */
-  filter: drop-shadow( 3px 3px 3px rgba(0, 0, 0, .7));
+  font-size: 30px;
+  fill: F565659; /* Text color */
+  filter: drop-shadow( 3px 3px 3px rgba(0, 0, 0, .4));
+  font-family: myFirstFont;
+}
+
+
+@media screen and (max-width: 992px) {
+    text {
+        font-size: 40px;
+        fill: F565659; /* Text color */
+
+        font-family: myFirstFont;
+    }
 }

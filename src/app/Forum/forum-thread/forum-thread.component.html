@@ -1,24 +1,19 @@
 <div class="container">
-  <button class="btn btn-dark" routerLink="../../">Back</button>
+  <button class="btn btn-dark" routerLink="../../">Terug</button>
   <br>
   <div class="my-3 card">
     <h1 class="card-header">{{originalPost.title}}</h1>
     <div class="card-body">
       <p>{{originalPost.content}}</p>
     </div>
-    <div class="card-footer text-muted">
-      Door: {{originalPost.author}}
-    </div>
+    <div class="card-footer text-muted">Door: {{originalPost.author}}</div>
   </div>
   <h2>Reacties:</h2>
   <div *ngFor="let post of posts" class="my-3 card">
-    <b class="card-header">{{post.author}} zegt</b>
     <div class="card-body">
       <p>{{post.content}}</p>
     </div>
-    <div class="card-footer text-muted">
-      Reactie nr.{{post.id + 1}}
-    </div>
+    <div class="card-footer text-muted">Door: {{post.author}}</div>
   </div>
   <app-new-forum-post></app-new-forum-post>
 </div>

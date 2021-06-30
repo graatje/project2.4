@@ -1,5 +1,17 @@
-<h4>Thread title:</h4>
-<input type="text" [(ngModel)]="title">
-<h4>Thread content:</h4>
-<textarea placeholder="Enter your message here" [(ngModel)]="content"></textarea>
-<button (click)="submitNewThread()">Submit</button>
+<div class="container">
+  <h1>Nieuw draadje</h1>
+  <div class="my-3 card">
+    <div class="card-header">
+      <input id="title" class="form-control form-control-lg" type="text" [(ngModel)]="title" placeholder="Je titel">
+    </div>
+    <div class="card-body">
+      <textarea class="form-control" id="content" rows="3" [(ngModel)]="content" placeholder="Je bericht"></textarea>
+    </div>
+    <div class="card-footer">
+      <div class="float-right">
+        <button class="btn btn-danger mx-1" routerLink="../../">Annuleer</button>
+        <button class="btn btn-dark mx-1" (click)="submitNewThread()">Verstuur</button>
+      </div>
+    </div>
+  </div>
+</div>

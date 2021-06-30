@@ -1,27 +1,29 @@
-<form [formGroup]="recipeFormGroup" (ngSubmit)="onSubmit()">
-    <h1>{{title}}</h1>
-    <div>
-        <label>Recept:<input type="text" formControlName="naam"></label>
-    </div>
-    <div>
-        <label>Bereidingstijd (in min.):<input type="number" formControlName="bereidingstijd"></label>
-    </div>
-    <div>
-        <label>Aantal personen:<input type="number" formControlName="personen"></label>
-    </div>
-    <div>
-        <label for="ingredienten">Ingrediënten:</label>
-        <textarea id="ingredienten" input type="text" formControlName="ingredienten"rows="1" cols="40"></textarea>
-    </div>
-    <div>
-        <label for="bereidingswijze">Bereidingswijze (in stappen):</label>
-        <textarea id="bereidingswijze" input type="text" formControlName="bereidingswijze" rows="6" cols="40"></textarea>
-    </div>
+<form class="text-center" [formGroup]="recipeFormGroup" (ngSubmit)="onSubmit()">
+    <div id="recipeform">
+        <h1>{{title}}</h1>
+        <div>
+            <input type="text" formControlName="naam" class="form-control mb-4" placeholder="Recept">
+        </div>
+        <div>
+            <input type="number" formControlName="bereidingstijd" class="form-control mb-4" placeholder="Bereidingstijd">
+        </div>
+        <div>
+            <input type="number" formControlName="personen" class="form-control mb-4" placeholder="Aantal personen">
+        </div>
+        <div>
+            <textarea id="ingredienten" input type="text" formControlName="ingredienten"rows="1" cols="40" class="form-control mb-4" placeholder="Ingredienten"></textarea>
+        </div>
+        <div>
+            <textarea id="bereidingswijze" input type="text" formControlName="bereidingswijze" rows="6" cols="40" class="form-control mb-4" placeholder="Bereidingswijze"></textarea>
+        </div>
 
-    <button class="button" type="submit">Toevoegen</button>
-    <button class="button" routerLink="../">Terug</button>
-
+        <button class="btn" type="submit">Toevoegen</button>
+        <button class="btn" routerLink="../">Terug</button>
+    </div>
 </form>
+
+
+
 
 
 

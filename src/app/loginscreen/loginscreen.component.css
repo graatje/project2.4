@@ -19,11 +19,17 @@ button{
     font-size: 20px;
     color: #565659;
     background-color: #ff9811;
+    border-color:#ff9811 ;
 }
 
 button:hover{
     background-color: #ffcc00;
+    border-color: #ffcc00;
+    color: white;
+}
 
+input:focus { 
+    box-shadow: 0 0 10px #ffcc00;
 }
 
 @media screen and (max-width: 992px) {
@@ -34,7 +40,3 @@ button:hover{
         margin-top: 30px;
     }
   }
-
-input:focus { 
-    box-shadow: 0 0 10px #ffcc00;
-}

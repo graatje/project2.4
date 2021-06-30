@@ -23,7 +23,7 @@ button{
 }
 
 button:hover{
-    background-color: #565659;
-    border-color: white;
-    border-width: 2px;
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+    color: #565659;
 }

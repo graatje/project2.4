@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {shareReplay, tap} from 'rxjs/operators';
 
+import * as bcrypt from 'bcryptjs'
 import * as moment from 'moment';
 import jwtDecode from 'jwt-decode';
 
@@ -17,6 +18,7 @@ export class AuthService {
     const formData = new FormData();
     formData.set("name", name);
     formData.set("password", password);
+    console.log(this.hashPassword(formData.get("password")?.toString()));
     return this.http.post<User>(API_URL + '/login', formData)
       .pipe(
         tap(
@@ -29,6 +31,16 @@ export class AuthService {
 
   public isLoggedIn() {
     return moment().isBefore(this.getExpiration());
+  }
+
+  hashPassword(pass: string|undefined): string{
+    let hashed: string = "";
+
+    if (pass !== undefined){
+      hashed = bcrypt.hashSync(pass, 12);
+    }
+
+    return hashed;
   }
 
   private setSession(authResult: any) {

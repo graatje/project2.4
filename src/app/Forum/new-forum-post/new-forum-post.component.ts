@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ForumThreadComponent } from '../forum-thread/forum-thread.component';
 import { ForumThreadService } from '../forum-thread.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-new-forum-post',
@@ -21,7 +22,8 @@ export class NewForumPostComponent implements OnInit {
 
   constructor(
     private threadService: ForumThreadService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService : AuthService
     ) { }
 
   ngOnInit(): void {
@@ -29,20 +31,18 @@ export class NewForumPostComponent implements OnInit {
   }
 
   onSendClick(): void {
+    let authorName = this.authService.getLoggedInUserName();
+
     const info: Forumpost = {
       id: this.postInfo.id,
-      author: this.postInfo.author,
+      author: authorName !== undefined? authorName : "Author not found",
       content: this.postInfo.content
     };
 
     this.route.paramMap.subscribe(params => this.idString = params.get("id"));
     let id = Number.parseInt(this.idString? this.idString : "");
 
-    let p = new Promise(() =>{
-      this.threadService.addCommentToThread(id, info);
-    }).then(() => {
-      location.reload();
-    })
+    this.threadService.addCommentToThread(id, info);
 
 
     this.resetPostInfo();

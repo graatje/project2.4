@@ -1,7 +1,9 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Recipe } from '../recipe';
 import { RecipeService } from '../recipe.service';
+
 
 @Component({
   selector: 'app-recipes',
@@ -11,20 +13,19 @@ import { RecipeService } from '../recipe.service';
 export class RecipesComponent implements OnInit {
     title = 'Receptenboek';
     recipes:Recipe[] = [];
-    selectedRecipe?: Recipe;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService,
+    private router: Router) { }
 
   ngOnInit() {
     this.getRecipes();
   }
 
-  onSelect(recipe:Recipe): void {
-      this.selectedRecipe = recipe;
+  getRecipes(): void {
+    this.recipeService.getRecipes().subscribe(recipes => {
+      console.log(recipes);
+      this.recipes = recipes;
+    });
   }
 
-  getRecipes(): void {
-    this.recipes = this.recipeService.getRecipes();
-  }
-    
 }

@@ -1,6 +1,8 @@
 export interface Message {
-    messageid: number;
-    sendername: string;
-    message: string;
+    msgid: number;
+    sender: string;
+    content: string;
+    roomid: number;
+    timestamp: number;
     // for future: roomid.
   }

@@ -4,14 +4,31 @@ import {shareReplay, tap} from 'rxjs/operators';
 
 import * as bcrypt from 'bcryptjs'
 import * as moment from 'moment';
+
 import jwtDecode from 'jwt-decode';
 
 // const API_URL = 'http://localhost:5000/api/';
 const API_URL = 'http://localhost:8080/api'
-
+export interface InfoMessage {
+  message: string;
+}
 @Injectable()
 export class AuthService {
   constructor(private http: HttpClient) {
+  }
+
+  decodeToken(): any{
+    let token = localStorage.getItem("id_token");
+    if(token === null){
+      return null;
+    }
+
+    try{
+      return jwt_decode(token);
+    }
+    catch(Error){
+      return null;
+    }
   }
 
   login(name: string, password: string) {
@@ -29,6 +46,21 @@ export class AuthService {
       );
   }
 
+  register(name: string, password: string, email: string){
+    const formData = new FormData();
+    formData.set("username", name);
+    formData.set("password", password);
+    formData.set("email", email);
+    return this.http.post<InfoMessage>(API_URL + "/register", formData)
+    .pipe(
+      tap(
+        res => console.log(res),
+        err => this.handleError(err),
+      ),
+      shareReplay()
+    );
+  }
+  
   public isLoggedIn() {
     return moment().isBefore(this.getExpiration());
   }

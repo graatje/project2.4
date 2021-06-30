@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,8 @@ export class RegisterComponent implements OnInit {
     password: '',
     confirmPassword: '',
   });
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -63,9 +65,21 @@ export class RegisterComponent implements OnInit {
   onRegister(): void{
     let valid = this.isValid();
     console.log(valid.value.success);  // when true, register.
-    alert(valid.value.message);
     
-
+    if(valid.value.success){
+      this.authService.register(this.registerForm.get("username")?.value, this.registerForm.get("password")?.value, 
+      this.registerForm.get("email")?.value).subscribe(
+        data => {
+          alert(data.message);
+        },
+        error => {
+          alert(error.message);
+        }
+      ); 
+    }else{
+      alert(valid.value.message);
+    }
+    
   }
 
   private passwordsMatching(password: string, passwordconfirm:string): FormGroup{

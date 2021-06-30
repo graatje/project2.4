@@ -7,7 +7,9 @@ import jwt_decode from 'jwt-decode';
 
 // const API_URL = 'http://localhost:5000/api/';
 const API_URL = 'http://localhost:8080/api'
-
+export interface InfoMessage {
+  message: string;
+}
 @Injectable()
 export class AuthService {
   constructor(private http: HttpClient) {
@@ -41,6 +43,21 @@ export class AuthService {
       );
   }
 
+  register(name: string, password: string, email: string){
+    const formData = new FormData();
+    formData.set("username", name);
+    formData.set("password", password);
+    formData.set("email", email);
+    return this.http.post<InfoMessage>(API_URL + "/register", formData)
+    .pipe(
+      tap(
+        res => console.log(res),
+        err => this.handleError(err),
+      ),
+      shareReplay()
+    );
+  }
+  
   public isLoggedIn() {
     return moment().isBefore(this.getExpiration());
   }

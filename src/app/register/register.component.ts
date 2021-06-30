@@ -73,7 +73,7 @@ export class RegisterComponent implements OnInit {
           alert(data.message);
         },
         error => {
-          alert(error.message);
+          alert(error.error.message);
         }
       ); 
     }else{

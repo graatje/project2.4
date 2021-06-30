@@ -24,3 +24,12 @@ ul {
   height: 1%;
   width: 1%;
 }
+
+#thread{
+    background-color: #ff9811;
+    padding: 20px 20px 20px 20px;
+    margin: auto;
+    width: 70%;
+    border-radius: 8px;
+    margin-top: 30px;
+}

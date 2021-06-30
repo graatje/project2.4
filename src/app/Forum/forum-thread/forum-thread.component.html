@@ -1,19 +1,17 @@
-<div class="my-2 container">
-  <button class="btn studorm-button studorm-clr-accent" routerLink="../../">Terug</button>
-  <br>
-  <div class="my-3 card">
-    <h1 class="card-header studorm-text">{{originalPost.title}}</h1>
-    <div class="card-body">
-      <p>{{originalPost.content}}</p>
+<div id="thread">
+    <div class="my-2 container">
+        <button class="btn studorm-button studorm-clr-dark" routerLink="../../">Terug</button>
+        <br>
+        <div class="my-3 card">
+            <h1 class="card-header studorm-text">{{originalPost.title}}</h1>
+            <div class="card-body"> <p>{{originalPost.content}}</p></div>
+            <div class="card-footer text-muted">Door: {{originalPost.author}}</div>
+        </div>
+        <h2 class="studorm-text text-center">Reacties</h2>
+            <div *ngFor="let post of posts" class="my-3 card">
+            <div class="card-body"><p>{{post.content}}</p></div>
+            <div class="card-footer text-muted">Door: {{post.author}}</div>
+        </div>
+        <app-new-forum-post></app-new-forum-post>
     </div>
-    <div class="card-footer text-muted">Door: {{originalPost.author}}</div>
-  </div>
-  <h2 class="studorm-text">Reacties</h2>
-  <div *ngFor="let post of posts" class="my-3 card">
-    <div class="card-body">
-      <p>{{post.content}}</p>
-    </div>
-    <div class="card-footer text-muted">Door: {{post.author}}</div>
-  </div>
-  <app-new-forum-post></app-new-forum-post>
 </div>

@@ -1,8 +1,7 @@
 #messagebox {
-  background-color: white;
-  overflow-y: scroll;
-  word-wrap: break-word;
-  height: 250px;
-  padding: 5px;
-
+    background-color: white;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    height: 250px;
+    padding: 5px;
 }

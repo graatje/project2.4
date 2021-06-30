@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ROOMS} from '../rooms';
 import {Router} from "@angular/router";
+import {Room} from '../room';
 
 @Component({
   selector: 'app-floorplansvg',
@@ -12,7 +13,8 @@ export class FloorplansvgComponent {
 
   constructor(private router: Router) {}
 
-  navigate(name: string): void {
-    this.router.navigate([name.toLowerCase()]);
+  navigate(room: Room): void {
+    let path = room.path ? room.path : room.name.toLowerCase();
+    this.router.navigate([path]);
   }
 }

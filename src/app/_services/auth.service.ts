@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {shareReplay, tap} from 'rxjs/operators';
 
 import * as moment from 'moment';
-import * as jwt_decode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
 
 // const API_URL = 'http://localhost:5000/api/';
 const API_URL = 'http://localhost:8080/api'
@@ -11,6 +11,20 @@ const API_URL = 'http://localhost:8080/api'
 @Injectable()
 export class AuthService {
   constructor(private http: HttpClient) {
+  }
+
+  decodeToken(): any{
+    let token = localStorage.getItem("id_token");
+    if(token === null){
+      return null;
+    }
+
+    try{
+      return jwt_decode(token);
+    }
+    catch(Error){
+      return null;
+    }
   }
 
   login(name: string, password: string) {

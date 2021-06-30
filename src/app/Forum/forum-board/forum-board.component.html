@@ -1,10 +1,16 @@
 <div class="threadContainer">
   <h2>Forum threads</h2>
-  <button routerLink="./nieuw">Nieuwe Thread</button>
-  <ul>
-    <li *ngFor="let thread of threads" routerLink="./thread/{{thread.id}}" >
-      <h4>{{thread.title}}</h4>
-      <p>Author: {{thread.author}}</p>
-    </li>
-  </ul>
+  <button class="btn btn-dark" routerLink="./nieuw">Nieuwe Thread</button>
+
+  <div *ngFor="let thread of threads" class="my-3 card " >
+    <h3 class="card-header">{{thread.title}}</h3>
+    <div class="card-body">
+      <p>{{thread.content}}</p>
+      <a class="btn btn-primary stretched-link" routerLink="./thread/{{thread.id}}">Lees meer</a>
+    </div>
+    <div class="card-footer text-muted">
+      Door: {{thread.author}}
+    </div>
+
+  </div>
 </div>

@@ -1,12 +1,12 @@
 <div class="card">
+  <h3 class="card-header">Nieuwe reactie</h3>
   <div class="card-body">
-    <h2>Nieuwe reactie</h2>
     <div class="form-group">
-      <label for="author">Naam</label>
+      <label for="author">Naam:</label>
       <input type="text" id="author" class="form-control-plaintext" readonly [value]="postInfo.author">
     </div>
     <div class="form-group">
-      <label for="content">Jouw reactie</label>
+      <label for="content">Jouw reactie:</label>
       <textarea class="form-control" id="content" rows="3" [(ngModel)]="postInfo.content"></textarea>
     </div>
     <div class="form-group">

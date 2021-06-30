@@ -1,0 +1,6 @@
+<h1>{{title}}</h1>
+<p>Verlopen tijd: {{elapsedTime}}s<br/>
+  Gevonden kaart-paren: {{foundCardPairs}}<br>
+  Resterende toontijd:<br></p>
+<ngb-progressbar type="dark" [value]="peekTimeRemaining" [animated]="timingService.PEEK_SECONDS !== peekTimeRemaining"
+                 [striped]="true" [max]="timingService.PEEK_SECONDS"></ngb-progressbar>

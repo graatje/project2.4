@@ -1,0 +1,29 @@
+p {
+  display: inline-block;
+  color: #565659;
+}
+
+b{
+    color: #565659;
+}
+
+input {
+  margin: 0 1em;
+}
+
+button{
+    border-radius: 8px;
+    font-family: myFirstFont;
+    font-size: 20px;
+    color: white;
+    background-color: #565659;
+    border-color: #565659;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button:hover{
+    background-color: #565659;
+    border-color: white;
+    border-width: 2px;
+}

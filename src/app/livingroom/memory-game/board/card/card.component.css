@@ -1,0 +1,15 @@
+div {
+  display: inline-block;
+  width: 4em;
+  line-height: 4em;
+  text-align: center;
+  font-size: large;
+  cursor: pointer;
+  border-radius: 3px;
+  color: #565659;
+}
+
+div.found {
+  cursor: default;
+  color: white;
+}

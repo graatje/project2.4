@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Forumthread, Forumpost } from '../forumpost';
 import { ForumThreadService } from '../forum-thread.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-new-forum-thread',
@@ -15,7 +16,8 @@ export class NewForumThreadComponent implements OnInit {
 
   constructor(
     private threadService: ForumThreadService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
     ) { }
 
   ngOnInit(): void {
@@ -26,10 +28,10 @@ export class NewForumThreadComponent implements OnInit {
     if (!this.title.trim() || !this.content.trim()){
       return;
     }
-
+    let authorName = this.authService.getLoggedInUserName();
     const nw : Forumthread = {
       id: 0,
-      author: "placeholder name", //TODO: Set the name of the logged-in person here!
+      author: authorName !== undefined? authorName : "Author not found",
       content: this.content,
       title: this.title,
       replies: []

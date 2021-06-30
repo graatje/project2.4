@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { KitchenComponent } from './Keuken/kitchen/kitchen.component';
@@ -27,6 +27,10 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MemoryGameComponent} from './livingroom/memory-game/memory-game.component';
+import {BoardModule} from './livingroom/memory-game/board/board.module';
+import {MemoryHeaderModule} from './livingroom/memory-game/header/memory-header.module';
+import {SidebarModule} from "./livingroom/memory-game/sidebar/sidebar.module";
 
 @NgModule({
   declarations: [
@@ -49,6 +53,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    MemoryGameComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,9 +66,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BoardModule,
+    MemoryHeaderModule,
+    SidebarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

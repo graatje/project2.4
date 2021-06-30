@@ -1,5 +1,5 @@
-<div class="container">
-  <h1 class="studorm-text">Nieuwe post</h1>
+<div class="container" id="forumthread">
+  <h1 class="studorm-text text-center">Nieuwe post</h1>
   <div class="my-3 card">
     <div class="card-header">
       <input id="title" class="form-control form-control-lg" type="text" [(ngModel)]="title" placeholder="Je titel">
@@ -9,7 +9,7 @@
     </div>
     <div class="card-footer">
       <div class="float-right">
-        <button class="btn studorm-button studorm-clr-primary-reverse mx-1" routerLink="../../">Annuleer</button>
+        <button class="btn studorm-button studorm-clr-accent mx-1" routerLink="../../">Annuleer</button>
         <button class="btn studorm-button studorm-clr-dark mx-1" (click)="submitNewThread()">Verstuur</button>
       </div>
     </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,17 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-    navbarOpen = false;
 
-  constructor() { }
+  constructor(private auth_service:AuthService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
-  toggleNavbar(){
-      this.navbarOpen = !this.navbarOpen;
+  isLoggedIn(): boolean{
+    return this.auth_service.isLoggedIn();
   }
 
-  
-
+  logout(){
+    this.auth_service.logout();
+    this.router.navigate(['home']);
+  }
 }

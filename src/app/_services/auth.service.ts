@@ -2,10 +2,10 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {shareReplay, tap} from 'rxjs/operators';
 
-import * as bcrypt from 'bcryptjs'
+//import * as bcrypt from 'bcryptjs'
 import * as moment from 'moment';
 
-import jwtDecode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
 
 // const API_URL = 'http://localhost:5000/api/';
 const API_URL = 'http://localhost:8080/api'
@@ -35,7 +35,6 @@ export class AuthService {
     const formData = new FormData();
     formData.set("name", name);
     formData.set("password", password);
-    console.log(this.hashPassword(formData.get("password")?.toString()));
     return this.http.post<User>(API_URL + '/login', formData)
       .pipe(
         tap(
@@ -65,15 +64,6 @@ export class AuthService {
     return moment().isBefore(this.getExpiration());
   }
 
-  hashPassword(pass: string|undefined): string{
-    let hashed: string = "";
-
-    if (pass !== undefined){
-      hashed = bcrypt.hashSync(pass, 12);
-    }
-
-    return hashed;
-  }
 
   private setSession(authResult: any) {
     console.log("Setting session");
@@ -108,7 +98,7 @@ export class AuthService {
     try{
       let token = localStorage.getItem('id_token');
       if (token){
-        let decoded = jwtDecode<any>(token)
+        let decoded = jwt_decode<any>(token)
         username = decoded.name;
       }
     } catch(Error){

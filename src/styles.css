@@ -8,8 +8,8 @@
   /* StuDorm kleuren */
   --studorm-clr-primary: #ffcc00;
   --studorm-clr-primary-text: #565659;
-  --studorm-clr-primary-accent: #ff9811;
-  --studorm-clr-primary-accent-text: #ffffff;
+  --studorm-clr-secondary: #ff9811;
+  --studorm-clr-secondary-text: #ffffff;
   --studorm-clr-dark: #565659;
   --studorm-clr-dark-text: #ffffff;
   --studorm-clr-dark-accent: var(--studorm-clr-primary);
@@ -18,6 +18,8 @@
 
 /**** Global styles that can (should) be used on every page ****/
 /* Yours truly, Marijn */
+
+/** Buttons **/
 
 .studorm-text {
   font-family: var(--studorm-font);
@@ -37,18 +39,18 @@
 }
 
 .studorm-clr-primary:hover {
-  background-color: var(--studorm-clr-primary-accent);
-  border-color: var(--studorm-clr-primary-accent);
-  color: var(--studorm-clr-primary-accent-text)
+  background-color: var(--studorm-clr-secondary);
+  border-color: var(--studorm-clr-secondary);
+  color: var(--studorm-clr-secondary-text)
 }
 
-.studorm-clr-primary-reverse {
-  background-color: var(--studorm-clr-primary-accent);
-  border-color: var(--studorm-clr-primary-accent);
-  color: var(--studorm-clr-primary-accent-text);
+.studorm-clr-accent {
+  background-color: var(--studorm-clr-secondary);
+  border-color: var(--studorm-clr-secondary);
+  color: var(--studorm-clr-secondary-text);
 }
 
-.studorm-clr-primary-reverse:hover {
+.studorm-clr-accent:hover {
   background-color: var(--studorm-clr-primary);
   border-color: var(--studorm-clr-primary);
   color: var(--studorm-clr-primary-text);
@@ -66,6 +68,25 @@
   color: var(--studorm-clr-dark-accent-text);
 }
 
+/** Input fields **/
+
 .select-glow:hover {
   box-shadow: 0 0 10px var(--studorm-clr-primary);
+}
+
+/** rooms **/
+
+.studorm-card {
+  padding: 8px;
+  border-radius: 8px;
+  margin: 30px auto auto;
+  width: 30%;
+}
+
+.studorm-card-clr-primary {
+  background-color: var(--studorm-clr-primary);
+}
+
+.studorm-card-clr-secondary {
+  background-color: var(--studorm-clr-secondary);
 }

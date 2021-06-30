@@ -13,6 +13,44 @@
 
 }
 
+#chat{
+    background-color: #ff9811;
+    padding: 8px;
+    margin: auto;
+    width: 30%;
+    border-radius: 8px;
+    margin-top: 30px;
+    #chatbox{
+position: absolute;
+width:50%;
+height: 40%;
+}
+#messagebox{
+    background-color: cadetblue;
+    position: relative;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    height: 80%;
+    margin-top: -10px;
+}
+
+.message{
+    position: relative;
+    top: 5px;
+    line-height:100%;
+    margin-top: -10px;
+}
+
+#sendmsg{
+    background-color: brown;
+    position: relative;
+    width: 97%;
+    height: 20%;   
+}
+
+}
+
+
 #infotext {
     background-color: #ff9811;
     padding: 8px;

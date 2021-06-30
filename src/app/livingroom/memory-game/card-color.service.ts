@@ -9,9 +9,9 @@ import {BehaviorSubject} from "rxjs";
 export class CardColorService {
 
   ctrlColors: CardColor[] = [
-    {control: CardStatus.inactive, color: "#FF0000"},
-    {control: CardStatus.active, color: "#008C00"},
-    {control: CardStatus.found, color: "#800080"}
+    {control: CardStatus.inactive, color: "#FFCC00"},
+    {control: CardStatus.active, color: "#ff9811"},
+    {control: CardStatus.found, color: "#565659"}
   ];
 
   private activeColorSrc = new BehaviorSubject<string>(this.ctrlColors[1].color)

@@ -1,9 +1,19 @@
-<h2>Woonkamer</h2>
-<p>Welkom in de woonkamer! Schuif aan bij een tafel of pak een spelletje uit de spelletjeskast.</p>
+<div id="infotext">
+    <h1>Woonkamer</h1>
+    <p>Welkom in de woonkamer!</p> 
+    <p>Start een leuk gesprek in de chat of speel een spelletje uit de spelletjeskast.</p>
+</div>
 
-<h3>Spelletjeskast</h3>
-<ul>
-    <li *ngFor="let game of games">
-        <a routerLink="./{{game.name | lowercase}}">{{game.name}}</a>
-    </li>
-</ul>
+<div id="gamecabinet">
+    <h1>Spelletjeskast</h1>
+    <ul>
+        <li *ngFor="let game of games">
+            <a routerLink="./{{game.name | lowercase}}">{{game.name}}</a>
+        </li>
+    </ul>
+</div>
+
+<div id="chatroom">
+    <h1>Chat</h1>
+    <chatroom></chatroom>
+</div>

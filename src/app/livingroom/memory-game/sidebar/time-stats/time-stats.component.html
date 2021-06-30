@@ -1,7 +1,8 @@
 <b>Top vijf</b>
 <ol>
-  <li *ngFor="let highscore of highscores">{{highscore.name}}: {{highscore.time}}</li>
+<li *ngFor="let highscore of highscores">{{highscore.name}}: {{highscore.time}}</li>
 </ol>
 <p><b>Gemiddelde speeltijd:</b> {{avgTime | formatTime}}s ({{elapsedTime - avgTime | formatTime: true }}s)</p>
+
 
 

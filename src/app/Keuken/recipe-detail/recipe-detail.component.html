@@ -1,23 +1,25 @@
-<button routerLink="../">Back</button>
-<div *ngIf="recipe">
-    <h2>{{recipe.naam | uppercase}}</h2>
-    <!-- <div><span>Bereidingstijd: </span>{{recipe.bereidingstijd}}</div> -->
-    <div><span>Personen: </span>{{recipe.aantalPersonen}}</div>
-    <div><span>Bereidingstijd: </span>{{recipe.bereidingstijd}}</div>
-    <div><span>Ingrediënten: </span>{{recipe.ingredienten}}</div>
-    <div><span>Bereidingswijze: </span>{{recipe.bereidingswijze}} </div>
-    <div (click)="onThumbsUpClick()">
-    <span *ngIf="thumbsUpStatus">
-      <img class="thumbsIcons" src="../../../assets/icons/like_clicked.png">
-    </span> <span *ngIf="!thumbsUpStatus">
-      <img class="thumbsIcons" src="../../../assets/icons/like_unclicked.png">
-    </span>
-    {{recipe.thumbsUp.length}}</div>
-    <div (click)="onThumbsDownClick()">
-      <span *ngIf="thumbsDownStatus">
-        <img class="thumbsIcons" src="../../../assets/icons/dislike_clicked.png">
-      </span><span *ngIf="!thumbsDownStatus">
-        <img class="thumbsIcons" src="../../../assets/icons/dislike_unclicked.png">
-      </span>
-      {{recipe.thumbsDown.length}}</div>
+<div id="infotext">
+    <button class="btn" routerLink="../">Terug</button>
+    <div *ngIf="recipe">
+        <h1>{{recipe.naam | uppercase}}</h1>
+        <!-- <div><span>Bereidingstijd: </span>{{recipe.bereidingstijd}}</div> -->
+        <div><span><b>Personen: </b></span>{{recipe.aantalPersonen}}</div>
+        <div><span><b>Bereidingstijd: </b> </span>{{recipe.bereidingstijd}}</div>
+        <div><span><b>Ingrediënten: </b></span>{{recipe.ingredienten}}</div>
+        <div><span><b>Bereidingswijze: </b></span>{{recipe.bereidingswijze}} </div>
+        <div (click)="onThumbsUpClick()">
+        <span *ngIf="thumbsUpStatus">
+        <img class="thumbsIcons" src="../../../assets/icons/like_clicked.png">
+        </span> <span *ngIf="!thumbsUpStatus">
+        <img class="thumbsIcons" src="../../../assets/icons/like_unclicked.png">
+        </span>
+        {{recipe.thumbsUp.length}}</div>
+        <div (click)="onThumbsDownClick()">
+        <span *ngIf="thumbsDownStatus">
+            <img class="thumbsIcons" src="../../../assets/icons/dislike_clicked.png">
+        </span><span *ngIf="!thumbsDownStatus">
+            <img class="thumbsIcons" src="../../../assets/icons/dislike_unclicked.png">
+        </span>
+        {{recipe.thumbsDown.length}}</div>
+    </div>
 </div>

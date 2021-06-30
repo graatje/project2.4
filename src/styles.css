@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: myFirstFont;
+  src: url(/assets/fonts/typographica_demo-webfont.woff);
+}
+
+:root {
+  --studorm-font: myFirstFont, sans-serif;
+  /* StuDorm kleuren */
+  --studorm-clr-primary: #ffcc00;
+  --studorm-clr-primary-text: #565659;
+  --studorm-clr-primary-accent: #ff9811;
+  --studorm-clr-primary-accent-text: #ffffff;
+  --studorm-clr-dark: #565659;
+  --studorm-clr-dark-text: #ffffff;
+  --studorm-clr-dark-accent: var(--studorm-clr-primary);
+  --studorm-clr-dark-accent-text: var(--studorm-clr-dark);
+}
+
+/**** Global styles that can (should) be used on every page ****/
+/* Yours truly, Marijn */
+
+.studorm-text {
+  font-family: var(--studorm-font);
+  color: var(--studorm-clr-dark);
+}
+
+.studorm-button {
+  border-radius: 8px;
+  font-family: var(--studorm-font);
+  font-size: 20px;
+}
+
+.studorm-clr-primary {
+  background-color: var(--studorm-clr-primary);
+  border-color: var(--studorm-clr-primary);
+  color: var(--studorm-clr-primary-text);
+}
+
+.studorm-clr-primary:hover {
+  background-color: var(--studorm-clr-primary-accent);
+  border-color: var(--studorm-clr-primary-accent);
+  color: var(--studorm-clr-primary-accent-text)
+}
+
+.studorm-clr-primary-reverse {
+  background-color: var(--studorm-clr-primary-accent);
+  border-color: var(--studorm-clr-primary-accent);
+  color: var(--studorm-clr-primary-accent-text);
+}
+
+.studorm-clr-primary-reverse:hover {
+  background-color: var(--studorm-clr-primary);
+  border-color: var(--studorm-clr-primary);
+  color: var(--studorm-clr-primary-text);
+}
+
+.studorm-clr-dark {
+  background-color: var(--studorm-clr-dark);
+  border: var(--studorm-clr-dark);
+  color: var(--studorm-clr-dark-text);
+}
+
+.studorm-clr-dark:hover {
+  background-color: var(--studorm-clr-dark-accent);
+  border: var(--studorm-clr-dark-accent);
+  color: var(--studorm-clr-dark-accent-text);
+}
+
+.select-glow:hover {
+  box-shadow: 0 0 10px var(--studorm-clr-primary);
+}

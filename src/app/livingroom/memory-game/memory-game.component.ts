@@ -6,5 +6,4 @@ import {Component} from '@angular/core';
   styleUrls: ['./memory-game.component.css']
 })
 export class MemoryGameComponent {
-  title = 'Memory';
 }

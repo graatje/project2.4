@@ -1,16 +1,9 @@
-<form class="text-center border border-light p-5" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+<form class="text-center" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div id="loginform">
 
-    <p class="h4 mb-4">Inloggen</p>
-    
-    <input type="email" id="username" formControlName="username" class="form-control mb-4" placeholder="E-mail">
-    <input type="password" id="password" formControlName="password" class="form-control mb-4" placeholder="Wachtwoord">
-  
-    <div class="d-flex justify-content-around">
-      <div>
-        <a href="">Wachtwoord vergeten?</a>
-      </div>
+        <p>Inloggen account</p>
+        <input type="username" id="username" formControlName="username" class="form-control mb-4 " placeholder="Gebruikersnaam">
+        <input type="password" id="password" formControlName="password" class="form-control mb-4" placeholder="Wachtwoord">
+        <button class="btn" type="submit">Inloggen</button>
     </div>
-
-    <button mdbBtn color="info" block="true" class="my-4" type="submit">Inloggen</button>
-
-  </form>
+</form>

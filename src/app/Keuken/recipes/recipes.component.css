@@ -1,0 +1,52 @@
+#infotext{
+    background-color: #ff9811;
+    padding: 8px;
+    margin: auto;
+    width: 30%;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+#recipebook{
+    background-color: #ffcc00;
+    padding: 8px;
+    margin: auto;
+    width: 30%;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #565659;
+    font-family: myFirstFont;
+    font-size: 30px;
+}
+
+p {
+    text-align: justify;
+    letter-spacing: 1px;
+    font-family: myFirstFont;
+    color: #565659;
+}
+
+li{
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-family: myFirstFont;
+    color: #565659;
+}
+
+button{
+    border-radius: 8px;
+    font-family: myFirstFont;
+    font-size: 20px;
+    color: #565659;
+    background-color: #ff9811;
+    
+}
+
+button:hover{
+    background-color: #ffcc00;
+
+}

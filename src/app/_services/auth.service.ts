@@ -2,7 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {shareReplay, tap} from 'rxjs/operators';
 
+//import * as bcrypt from 'bcryptjs'
 import * as moment from 'moment';
+
 import jwt_decode from 'jwt-decode';
 
 // const API_URL = 'http://localhost:5000/api/';
@@ -62,11 +64,12 @@ export class AuthService {
     return moment().isBefore(this.getExpiration());
   }
 
+
   private setSession(authResult: any) {
     console.log("Setting session");
     const expiresAt = moment().add(authResult.expiresIn, 'second');
 
-    localStorage.setItem('id_token', authResult.idToken);
+    localStorage.setItem('id_token', authResult.token);
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()));
   }
 
@@ -87,6 +90,21 @@ export class AuthService {
       console.log(expiration);
     }
     return moment(expiresAt);
+  }
+
+  public getLoggedInUserName() : string|undefined {
+    let username: string|undefined;
+
+    try{
+      let token = localStorage.getItem('id_token');
+      if (token){
+        let decoded = jwt_decode<any>(token)
+        username = decoded.name;
+      }
+    } catch(Error){
+      console.log(Error);
+    }
+    return username;
   }
 
   private handleError(error: any) {

@@ -10,8 +10,8 @@ export class CardColorService {
 
   ctrlColors: CardColor[] = [
     {control: CardStatus.inactive, color: "#FFCC00"},
-    {control: CardStatus.active, color: "#669966"},
-    {control: CardStatus.found, color: "#993366"}
+    {control: CardStatus.active, color: "#ff9811"},
+    {control: CardStatus.found, color: "#565659"}
   ];
 
   private activeColorSrc = new BehaviorSubject<string>(this.ctrlColors[1].color)

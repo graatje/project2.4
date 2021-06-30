@@ -3,8 +3,20 @@
   width: fit-content;
   margin: 8px auto;
 
-  background-color: #ffcc00;
+  background-color: #ff9811;
   padding: 8px;
   border-radius: 8px;
   text-align: center;
+  margin-top: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #565659;
+    font-family: myFirstFont;
+    font-size: 30px;
+}
+
+p{
+    color: #565659;
 }

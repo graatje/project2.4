@@ -12,7 +12,7 @@ export class ChatroomComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private messageService: MessageService,
-    private authService: AuthService) { 
+    private authService: AuthService) {
     }
   messages?: Message[];
   message: string = "";
@@ -32,7 +32,7 @@ export class ChatroomComponent implements OnInit {
       if(tempname !== "" && tempname !== null){
         this.name = tempname;
       }
-    
+
       this.message = this.message.trim();
       let w: Message = {
         msgid: 1,
@@ -56,7 +56,7 @@ export class ChatroomComponent implements OnInit {
           continue;
         }
         this.addMessage(message);
-        
+
       }
     })
   }
@@ -69,14 +69,13 @@ export class ChatroomComponent implements OnInit {
   }
 
   private addMessage(msg: Message){
-    var node = document.createTextNode(":" + msg.content);
-    var name = document.createElement("i");
-    name.innerHTML = msg.sender.italics();
-    var paragraph = document.createElement("p");
+    const node = document.createTextNode(": " + msg.content);
+    const name = document.createElement("b");
+    name.innerHTML = msg.sender;
+    const paragraph = document.createElement("p");
     paragraph.appendChild(name);
     paragraph.appendChild(node);
-    paragraph.className = "message";
-    paragraph.style.marginTop = "-10px";
+    paragraph.style.margin = "0"; // necessary because we don't use angular to insert paragraphs.
     document.getElementById("messagebox")?.append(paragraph);
     if(msg.sender === this.name){
       document.getElementById("messagebox")?.scrollBy(0,500);

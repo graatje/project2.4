@@ -24,6 +24,7 @@
 .studorm-text {
   font-family: var(--studorm-font);
   color: var(--studorm-clr-dark);
+  letter-spacing: 1px;
 }
 
 .studorm-button {

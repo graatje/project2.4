@@ -1,6 +1,6 @@
 <div id="chatbox">
-    <div id="messagebox">
-        <p *ngFor="let message of messages" class="message"><i>{{message.sender}}</i>: {{message.content}}</p>
-    </div>
-    <input (keydown.enter)="onEnterPress()" type=text id="sendmsg" [(ngModel)]="message" placeholder="send a message...">
+  <div id="messagebox">
+  </div>
+  <input autocomplete="off" class="form-control my-2 select-glow" (keydown.enter)="onEnterPress()" type=text id="sendmsg"
+         [(ngModel)]="message" placeholder="Typ een bericht...">
 </div>

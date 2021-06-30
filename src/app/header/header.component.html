@@ -1,21 +1,14 @@
-<header>
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" routerLink="./home">
         <img src="../../assets/images/logo.svg">
     </a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">StuDorm</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" routerLink="./keuken/recepten">Keuken</a>
-                    <a class="dropdown-item" routerLink="./woonkamer">Woonkamer</a>
-                    <a class="dropdown-item" routerLink="./studiekamer/prikbord">Studiekamer</a>
-                </div>
             </li>
-        </ul>
-
-    </div>
-  </nav>
-</header>
+    <ul ngbNav #nav="ngbNav" >
+        <li ngbNavItem>
+            <div *ngIf=isLoggedIn()>
+                <button style="float: right;" class="btn" (click)="logout()">Uitloggen</button>
+            </div>
+        </li>   
+    </ul>
+</nav>

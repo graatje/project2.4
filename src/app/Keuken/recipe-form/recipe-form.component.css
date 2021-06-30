@@ -11,7 +11,7 @@ button{
     border-radius: 8px;
     font-family: myFirstFont;
     font-size: 20px;
-    color: #565659;
+    color: white;
     background-color: #ff9811;
     border-color:#ff9811 ;
     margin-right: 10px;
@@ -20,10 +20,14 @@ button{
 button:hover{
     background-color: #ffcc00;
     border-color: #ffcc00;
-    color: white;
+    color: #565659;
 }
 
 input:focus { 
+    box-shadow: 0 0 10px #ffcc00;
+}
+
+textarea:focus{
     box-shadow: 0 0 10px #ffcc00;
 }
 

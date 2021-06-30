@@ -5,7 +5,7 @@ img{
 }
 
 #infotext{
-    background-color: #ff9811;
+    background-color: #ffcc00;
     padding: 20px 20px 20px 20px;
     margin: auto;
     width: 30%;
@@ -27,11 +27,11 @@ button{
     font-size: 20px;
     color: white;
     background-color: #565659;
-    border-color:#ff9811 ;
+    border-color:#ffcc00;
 }
 
 button:hover{
-    background-color: #ffcc00;
+    background-color: #ff9811;
     border-color: #ffcc00;
-    color: white;
+    color: #565659;
 }

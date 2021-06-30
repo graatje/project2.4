@@ -1,9 +1,0 @@
-<div *ngIf="recipe">
-    <h2>{{recipe.naam | uppercase}}</h2>
-    <div><span>Bereidingstijd: </span>{{recipe.bereidingstijd}}</div>
-    <div><span>Personen: </span>{{recipe.personen}}</div>
-    <div><span>Bereidingstijd: </span>{{recipe.bereidingstijd}}</div>
-    <div><span>Ingrediënten: </span>{{recipe.ingredienten}}</div>
-    <div><span>Bereidingswijze: </span>{{recipe.bereidingswijze}} </div>
-    <div><span><ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating></span></div>
-</div>

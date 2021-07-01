@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
 
     return this.formBuilder.group({
       success: true,
-      message: "registering successful!"
+      message: "succesvol geregistreerd!!"
     });
   }
 
@@ -86,7 +86,7 @@ export class RegisterComponent implements OnInit {
   private passwordsMatching(password: string, passwordconfirm:string): FormGroup{
     return this.formBuilder.group({
       success: password === passwordconfirm,
-      message: "password and passwordconfirmation don't match!"
+      message: "wachtwoord en wachtwoordbevestiging komen niet overeen!!"
     })
   }
   private emailValid(email: string): FormGroup{
@@ -99,7 +99,7 @@ export class RegisterComponent implements OnInit {
     }
     return this.formBuilder.group({
       success: valid,
-      message: "please fill in a valid e-mail address!"
+      message: "graag een geldige e-mail invullen!"
     })
   }
 }

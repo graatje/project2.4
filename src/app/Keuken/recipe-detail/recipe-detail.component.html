@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div id="infotext">
     <button class="btn" routerLink="../">Terug</button>
     <div *ngIf="recipe">
@@ -7,18 +8,18 @@
         <div><span><b>Bereidingstijd: </b> </span>{{recipe.bereidingstijd}}</div>
         <div><span><b>Ingrediënten: </b></span>{{recipe.ingredienten}}</div>
         <div><span><b>Bereidingswijze: </b></span>{{recipe.bereidingswijze}} </div>
-        <div (click)="onThumbsUpClick()">
+        <div  >
         <span *ngIf="thumbsUpStatus">
-        <img class="thumbsIcons" src="../../../assets/icons/like_clicked.png">
+        <img (click)="onThumbsUpClick()" class="thumbsIcons" src="/assets/icons/like_clicked.png">
         </span> <span *ngIf="!thumbsUpStatus">
-        <img class="thumbsIcons" src="../../../assets/icons/like_unclicked.png">
+        <img (click)="onThumbsUpClick()" class="thumbsIcons" src="/assets/icons/like_unclicked.png">
         </span>
         {{recipe.thumbsUp.length}}</div>
-        <div (click)="onThumbsDownClick()">
+        <div >
         <span *ngIf="thumbsDownStatus">
-            <img class="thumbsIcons" src="../../../assets/icons/dislike_clicked.png">
+            <img (click)="onThumbsDownClick()" class="thumbsIcons" src="/assets/icons/dislike_clicked.png">
         </span><span *ngIf="!thumbsDownStatus">
-            <img class="thumbsIcons" src="../../../assets/icons/dislike_unclicked.png">
+            <img (click)="onThumbsDownClick()" class="thumbsIcons" src="/assets/icons/dislike_unclicked.png">
         </span>
         {{recipe.thumbsDown.length}}</div>
     </div>

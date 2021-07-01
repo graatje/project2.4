@@ -1,37 +1,3 @@
-nav{
-    background-color: #ffcc00;
-    height: 65px;
+.bg-studorm-primary {
+  background-color: var(--studorm-clr-primary);
 }
-
-img{
-    height: 50px;
-}
-
-button{
-    border-radius: 8px;
-    font-family: myFirstFont;
-    font-size: 16px;
-    color: white;
-    background-color: #565659;
-    border-color:#565659 ;
-}
-
-button:hover{
-    border-color: #565659;
-    color: #ff9811;
-}
-
-@media only screen and (max-width: 600px) {
-    img {
-        height: 40px;
-    }
-
-    button{
-        border-radius: 8px;
-        font-family: myFirstFont;
-        font-size: 14px;
-        color: white;
-        background-color: #565659;
-        border-color:#565659 ;
-    }
-  }

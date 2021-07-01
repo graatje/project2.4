@@ -5,6 +5,7 @@ import {SidebarComponent} from './sidebar.component';
 import {GameSettingsComponent} from './game-settings/game-settings.component';
 import {FormsModule} from "@angular/forms";
 import {FormatTimePipe} from './game-settings/format-delta.pipe';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -17,10 +18,11 @@ import {FormatTimePipe} from './game-settings/format-delta.pipe';
   exports: [
     SidebarComponent
   ],
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        RouterModule
+    ]
 })
 export class SidebarModule {
 }

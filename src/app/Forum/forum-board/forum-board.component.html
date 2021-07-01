@@ -1,10 +1,11 @@
+<app-header></app-header>
 <div id="prikbord">
     <div class="my-2 container">
         <div class="text-center">
             <h2 class="studorm-text">Forumposts</h2>
             <button class="btn studorm-button studorm-clr-dark" routerLink="./nieuw">Nieuwe post</button>
         </div>
-        
+
 
         <div *ngFor="let thread of threads" class="my-3 card">
             <h3 class="card-header studorm-text">{{thread.title}}</h3>

@@ -71,6 +71,7 @@ export class RegisterComponent implements OnInit {
       this.registerForm.get("email")?.value).subscribe(
         data => {
           alert(data.message);
+          this.registerForm.reset(); 
         },
         error => {
           alert(error.error.message);

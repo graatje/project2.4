@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Recipe } from '../recipe';
 import { RecipeService } from '../recipe.service';
@@ -13,11 +13,11 @@ export class RecipeFormComponent {
     title = 'Recept indienen';
 
     recipeFormGroup = new FormGroup({
-        naam: new FormControl(''),
-        bereidingstijd: new FormControl(''),
-        personen: new FormControl(''),
-        bereidingswijze: new FormControl(''),
-        ingredienten: new FormControl(''),
+        naam: new FormControl(null, Validators.required),
+        bereidingstijd: new FormControl(null, Validators.required),
+        personen: new FormControl(null, Validators.required),
+        bereidingswijze: new FormControl(null, Validators.required),
+        ingredienten: new FormControl(null, Validators.required),
     });
 
   constructor(
@@ -29,6 +29,10 @@ export class RecipeFormComponent {
 
   onSubmit() {
     //TODO: validate form
+    if (this.recipeFormGroup.invalid){
+      alert("Vul alle velden in A.U.B. !");
+      return;
+    }
 
     let newRecipe: Recipe = {
       id: 0,
@@ -42,7 +46,7 @@ export class RecipeFormComponent {
     }
 
     this.recipeService.addRecipe(newRecipe).subscribe(recipe =>{
-      this.router.navigate(['/keuken'])
+      this.router.navigate(['/keuken/recepten'])
     })
 
   }

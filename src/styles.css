@@ -12,8 +12,6 @@
   --studorm-clr-secondary-text: #ffffff;
   --studorm-clr-dark: #565659;
   --studorm-clr-dark-text: #ffffff;
-  --studorm-clr-dark-accent: var(--studorm-clr-primary);
-  --studorm-clr-dark-accent-text: var(--studorm-clr-dark);
 }
 
 /**** Global styles that can (should) be used on every page ****/
@@ -64,9 +62,15 @@
 }
 
 .studorm-clr-dark:hover {
-  background-color: var(--studorm-clr-dark-accent);
-  border: var(--studorm-clr-dark-accent);
-  color: var(--studorm-clr-dark-accent-text);
+  background-color: var(--studorm-clr-primary);
+  border: var(--studorm-clr-primary);
+  color: var(--studorm-clr-dark);
+}
+
+.studorm-clr-dark-alt-hover:hover {
+  background-color: var(--studorm-clr-secondary);
+  border: var(--studorm-clr-secondary);
+  color: var(--studorm-clr-dark);
 }
 
 /** Input fields **/

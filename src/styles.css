@@ -25,6 +25,14 @@
   letter-spacing: 1px;
 }
 
+.studorm-text-clr-primary {
+  color: var(--studorm-clr-primary);
+}
+
+.studorm-text-clr-secondary {
+  color: var(--studorm-clr-secondary);
+}
+
 .studorm-button {
   border-radius: 8px;
   font-family: var(--studorm-font);
@@ -95,4 +103,8 @@
 
 .studorm-card-clr-secondary {
   background-color: var(--studorm-clr-secondary);
+}
+
+.studorm-card-clr-dark {
+  background-color: var(--studorm-clr-dark);
 }

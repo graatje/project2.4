@@ -4,9 +4,9 @@
  * Found: letter permanently visible
  */
 export enum CardStatus {
-  inactive = 'inactive',
-  active = 'active',
-  found = 'found'
+  inactive = 'inactief',
+  active = 'actief',
+  found = 'gevonden'
 }
 
 export class Card {

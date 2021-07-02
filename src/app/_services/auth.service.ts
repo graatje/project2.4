@@ -61,14 +61,24 @@ export class AuthService {
   }
   
   public isLoggedIn() {
-    return moment().isBefore(this.getExpiration());
+    let token = localStorage.getItem("id_token");
+    if(token == null){
+      return false;
+    }
+
+    
+    return moment().isBefore(this.getExpiration()) && this.verifyToken(token);
   }
 
+  private async verifyToken(token: string){
+    const formData = new FormData();
+    formData.set("token", token);
+    const t = await this.http.post<InfoMessage>(API_URL + "/isvalidtoken", formData).toPromise();
+    return t.message === "ok";
+  }
 
   private setSession(authResult: any) {
-    console.log("Setting session");
     const expiresAt = moment().add(authResult.expiresIn, 'second');
-
     localStorage.setItem('id_token', authResult.token);
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()));
   }

@@ -43,12 +43,12 @@ export class RegisterComponent implements OnInit {
 
     return this.formBuilder.group({
       success: true,
-      message: "succesvol geregistreerd!!"
+      message: "Succesvol geregistreerd."
     });
   }
 
   private emptyCheck(): FormGroup{
-    
+
     let isEmpty = false;
     Object.keys(this.registerForm.controls).forEach(key => {
       if(this.registerForm.get(key)?.value === "")
@@ -58,35 +58,35 @@ export class RegisterComponent implements OnInit {
     });
     return this.formBuilder.group({
       success: !isEmpty,
-      message: "Please fill in all fields!"
+      message: "Vul a.u.b. alle velden in."
     })
   }
 
   onRegister(): void{
     let valid = this.isValid();
     console.log(valid.value.success);  // when true, register.
-    
+
     if(valid.value.success){
-      this.authService.register(this.registerForm.get("username")?.value, this.registerForm.get("password")?.value, 
+      this.authService.register(this.registerForm.get("username")?.value, this.registerForm.get("password")?.value,
       this.registerForm.get("email")?.value).subscribe(
         data => {
           alert(data.message);
-          this.registerForm.reset(); 
+          this.registerForm.reset();
         },
         error => {
           alert(error.error.message);
         }
-      ); 
+      );
     }else{
       alert(valid.value.message);
     }
-    
+
   }
 
   private passwordsMatching(password: string, passwordconfirm:string): FormGroup{
     return this.formBuilder.group({
       success: password === passwordconfirm,
-      message: "wachtwoord en wachtwoordbevestiging komen niet overeen!!"
+      message: "Wachtwoorden komen niet overeen."
     })
   }
   private emailValid(email: string): FormGroup{
@@ -99,7 +99,7 @@ export class RegisterComponent implements OnInit {
     }
     return this.formBuilder.group({
       success: valid,
-      message: "graag een geldige e-mail invullen!"
+      message: "Vul a.u.b. een geldig e-mail in."
     })
   }
 }

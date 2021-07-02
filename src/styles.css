@@ -83,7 +83,8 @@
 
 /** Input fields **/
 
-.select-glow:hover {
+.select-glow:focus {
+  border-color: var(--studorm-clr-primary);
   box-shadow: 0 0 10px var(--studorm-clr-primary);
 }
 

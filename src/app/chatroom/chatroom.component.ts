@@ -18,6 +18,16 @@ export class ChatroomComponent implements OnInit {
   message: string = "";
   constantUpdate: any;
   name: string="";
+
+  private entityMap = new Map<string, string>(Object.entries({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+  }));
+
   ngOnInit(): void {
     console.log("on init:");
     console.log(this.messageService);
@@ -68,10 +78,14 @@ export class ChatroomComponent implements OnInit {
     this.message = "";  // clearing the message after it has been sent.
   }
 
-  private addMessage(msg: Message){
-    const node = document.createTextNode(": " + msg.content);
-    const name = document.createElement("b");
-    name.innerHTML = msg.sender;
+  private escape_html(source: string) {
+    return String(source).replace(/[&<>"'\/]/g, (s: string) => this.entityMap.get(s)!);
+  }
+
+  private addMessage(msg: Message) {
+    const node = document.createTextNode(": " + msg.content); // this already escapes HTML
+    const name = document.createElement("b"); // this does not
+    name.innerHTML = this.escape_html(msg.sender); // therefore, escape HTML manually
     const paragraph = document.createElement("p");
     paragraph.appendChild(name);
     paragraph.appendChild(node);

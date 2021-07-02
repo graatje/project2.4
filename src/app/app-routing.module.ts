@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginscreenComponent } from './loginscreen/loginscreen.component';
 import { FloorplanComponent } from './floorplan/floorplan.component';
 import { KitchenComponent } from './Keuken/kitchen/kitchen.component';
 import { LivingroomComponent } from './livingroom/livingroom.component';
@@ -20,7 +19,6 @@ import {MemoryGameComponent} from "./livingroom/memory-game/memory-game.componen
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
-  { path: 'login', component: LoginscreenComponent },
   { path: 'keuken', component: KitchenComponent, canActivate: [guard] },
   { path: 'keuken/recepten', component: RecipesComponent, canActivate: [guard]},
   { path: 'keuken/recepten/nieuw', component: RecipeFormComponent, canActivate: [guard]},

@@ -13,7 +13,7 @@ svg {
 
 text {
   font-size: 30px;
-  fill: F565659; /* Text color */
+  fill: #1a1a1a; /* Text color */
   filter: drop-shadow( 3px 3px 3px rgba(0, 0, 0, .4));
   font-family: myFirstFont;
 }
@@ -22,8 +22,5 @@ text {
 @media screen and (max-width: 992px) {
     text {
         font-size: 40px;
-        fill: F565659; /* Text color */
-
-        font-family: myFirstFont;
     }
 }

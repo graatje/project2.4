@@ -1,9 +1,10 @@
-<form class="text-center" [formGroup]="loginForm" (ngSubmit)="onLogin()">
-    <div id="loginform">
+<div class="studorm-card studorm-card-clr-dark mx-3 p-3">
+  <form class="text-center" [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
-        <p>Inloggen account</p>
-        <input type="username" id="username" formControlName="username" class="form-control mb-4 " placeholder="Gebruikersnaam/E-mail">
-        <input type="password" id="password" formControlName="password" class="form-control mb-4" placeholder="Wachtwoord">
-        <button class="btn" type="submit">Inloggen</button>
-    </div>
-</form>
+    <h2 class="studorm-text studorm-text-clr-primary">Inloggen account</h2>
+    <input type="text" id="username" formControlName="username" class="form-control mb-4 select-glow"
+           placeholder="Gebruikersnaam/E-mail">
+    <input type="password" id="password" formControlName="password" class="form-control mb-4 select-glow" placeholder="Wachtwoord">
+    <button class="btn studorm-button studorm-clr-primary" type="submit">Inloggen</button>
+  </form>
+</div>
